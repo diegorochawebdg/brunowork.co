@@ -1,0 +1,30 @@
+/*
+ * Fonts
+ */
+$gilroy: 'gilroy', sans-serif;
+
+/**
+ * Bootstrap grid values
+ **/
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+) !default;
+
+$grid-breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1400px,
+) !default;
+
+/**
+ * Colors
+ * (names generated using "Name that color website" - http://chir.ag/projects/name-that-color/)
+ **/
+$white: #FFF;
+$torch_red: #FF1557;
+$cod_gray: #121212;

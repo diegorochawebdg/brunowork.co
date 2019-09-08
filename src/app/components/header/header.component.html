@@ -1,0 +1,33 @@
+<header class="header">
+  <a [routerLink]="['/']" class="header__logo">
+    <img src="assets/images/brunowork.svg" alt="Logotipo Brunowork" class="header__logo-image">
+    Brunowork.co
+  </a>
+  <nav class="header__menu">
+    <a
+      [routerLink]="['/all-works']"
+      routerLinkActive="active"
+      class="header__link">
+      all works
+    </a>
+    <a
+      [routerLink]="['/about']"
+      routerLinkActive="active"
+      class="header__link">
+      about
+    </a>
+    <a
+      href="https://medium.com/@brunoalvesfernandes/highlights"
+      routerLinkActive="active"
+      target="_blank"
+      class="header__link">
+      articles
+    </a>
+    <a
+      href="mailto:hello@brunowork.co"
+      routerLinkActive="active"
+      class="header__link">
+      hello@brunowork.co
+    </a>
+  </nav>
+</header>
