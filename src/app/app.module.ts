@@ -1,24 +1,24 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
+import { ArticleComponent } from './components/article/article.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { ArticleListComponent } from './components/article-list/article-list.component';
+import { HeaderComponent } from './components/header/header.component';
 import { SliderComponent } from './components/slider/slider.component';
-import { HomeComponent } from './views/home/home.component';
 import { AboutComponent } from './views/about/about.component';
+import { HomeComponent } from './views/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ArticleListComponent,
     SliderComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,

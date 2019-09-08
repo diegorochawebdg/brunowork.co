@@ -1,1 +1,35 @@
-<p>home works!</p>
+<main class="home">
+  <div class="home__title-wrapper">
+    <h1 class="home__title">Product Design and Strategy<span>.</span></h1>
+  </div>
+  <div class="home__bio-wrapper row">
+    <div class="home__social-wrapper col-md-4">
+      <h3 class="home__social-title page-subtitle">Let's be friends.</h3>
+      <ul class="home__social-list">
+        <li class="home__social-list-item">
+          <a href="#" class="home__social-link">LinkedIn</a>
+        </li>
+        <li class="home__social-list-item">
+          <a href="#" class="home__social-link">Medium</a>
+        </li>
+        <li class="home__social-list-item">
+          <a href="#" class="home__social-link">Dribbble</a>
+        </li>
+      </ul>
+    </div>
+    <div class="home__bio-text-wrapper col-md-8">
+      <h3 class="home__bio-title page-subtitle">Bruno Alves Fernandes</h3>
+      <p class="home__bio-text">I'm a Product designer with focus on agile, data analysis, design sprints, research, prototypes and leadership.</p>
+      <p class="home__bio-text">Over the last years, i've been working with huge companies leading technology transformation and with startups building products from the scratch. I'm also led design teams, with more than 24 headcounts, to succeed in complex busines s enviroments. All this experience gave me a strong vision about the power of design.</p>
+      <a [routerLink]="['/about']" class="home__bio-read-mor read-more">Full bio</a>
+    </div>
+  </div>
+
+  <div class="home__projects-wrapper">
+    <ol class="articles-list">
+      <li class="article-list__item">
+        <app-article></app-article>
+      </li>
+    </ol>
+  </div>
+</main>
