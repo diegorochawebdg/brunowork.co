@@ -1,0 +1,45 @@
+* {
+  outline: none;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $cod_gray;
+  font-family: $gilroy;
+  font-size: 24px;
+  color: #FFF;
+}
+
+html,
+body,
+div,
+form,
+fieldset,
+legend,
+label,
+ul,
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  border: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
