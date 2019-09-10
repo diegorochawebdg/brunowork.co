@@ -1,0 +1,27 @@
+@import 'variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 84px;
+
+  &__logo {
+    font-size: 0;
+  }
+
+  &__menu {
+    margin-left: auto;
+  }
+
+  &__link {
+    color: $white;
+
+    &:not( :first-child ) {
+      padding-left: 26px;
+    }
+
+    &:not( :last-child ) {
+      padding-right: 26px;
+    }
+  }
+}
