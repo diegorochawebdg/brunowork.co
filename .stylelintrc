@@ -6,7 +6,7 @@
     "no-descending-specificity": null,
     "at-rule-no-unknown": null,
     "indentation": 2,
-    "string-quotes": "single",
+    "string-quotes": "double",
     "no-duplicate-selectors": true,
     "color-hex-case": "lower",
     "color-hex-length": "short",

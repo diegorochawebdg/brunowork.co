@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "fixlint": "npm run fixlint:ts && npm run fixlint:styles",
+    "fixlint:ts": "ng lint --fix",
+    "fixlint:styles": "stylelint \"src/**/*.scss\" --fix"
   },
   "private": true,
   "dependencies": {

@@ -1,0 +1,32 @@
+@import "variables";
+
+.home {
+  &__title {
+    font-size: 13.5vw;
+    margin-bottom: 70px;
+
+    > span {
+      color: $torch_red;
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__social-link {
+    font-size: 22px;
+    color: $wild_sand;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__bio-text {
+    &:last-of-type {
+      margin-bottom: 44px;
+    }
+  }
+}
