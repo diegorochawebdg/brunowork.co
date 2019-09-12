@@ -1,3 +1,5 @@
+@import "variables";
+
 * {
   outline: none;
   box-sizing: border-box;
@@ -6,10 +8,10 @@
 
 body {
   box-sizing: border-box;
-  background-color: $cod_gray;
   font-family: $gilroy;
   font-size: 24px;
-  color: #FFF;
+  color: $wild_sand;
+  background-color: $cod_gray;
 }
 
 html,
@@ -42,4 +44,8 @@ img {
 
 a {
   text-decoration: none;
+}
+
+p {
+  line-height: 34px;
 }

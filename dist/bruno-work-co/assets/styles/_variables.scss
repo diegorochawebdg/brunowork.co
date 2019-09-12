@@ -1,7 +1,7 @@
 /*
  * Fonts
  */
-$gilroy: 'gilroy', sans-serif;
+$gilroy: "gilroy", sans-serif;
 
 /**
  * Bootstrap grid values
@@ -14,17 +14,20 @@ $container-max-widths: (
 ) !default;
 
 $grid-breakpoints: (
-  xs: 576px,
-  sm: 768px,
-  md: 992px,
-  lg: 1200px,
-  xl: 1400px,
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
 ) !default;
+
+$grid-gutter-width: 20px !default;
 
 /**
  * Colors
  * (names generated using "Name that color website" - http://chir.ag/projects/name-that-color/)
  **/
-$white: #FFF;
-$torch_red: #FF1557;
+$white: #fff;
+$wild_sand: #f5f5f5;
+$torch_red: #ff1557;
 $cod_gray: #121212;
