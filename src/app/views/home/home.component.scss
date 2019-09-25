@@ -2,7 +2,7 @@
 
 .home {
   &__title {
-    font-size: 13.5vw;
+    font-size: 11.4vw;
     margin-bottom: 70px;
 
     > span {
@@ -22,6 +22,10 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  &__bio-wrapper {
+    margin-bottom: 178px;
   }
 
   &__bio-text {

@@ -1,0 +1,42 @@
+@import "variables";
+
+.footer {
+  margin-top: 140px;
+
+  &__text-wrapper {
+    margin-bottom: 100px;
+  }
+
+  &__text {
+    font-size: 65px;
+    font-weight: bold;
+    display: block;
+    line-height: 80px;
+
+    > a {
+      color: $torch_red;
+    }
+  }
+
+  &__copyright-social-wrapper {
+    margin-bottom: 48px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+    color: $dusty_gray;
+    font-weight: normal;
+  }
+
+  &__social-list-item {
+    display: inline-block;
+
+    &:not( :last-child ) {
+      margin-right: 33px;
+    }
+  }
+
+  &__social-link {
+    color: $white;
+  }
+}

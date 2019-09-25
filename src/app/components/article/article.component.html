@@ -7,15 +7,15 @@
     <p class="article__text">In 2019 we started a new project for a PA CA Startup. Carupi promisse to reinvent the experience of sell cars withou leaning home. In 2019 we started a new project for a PA CA Startup. Carupi promisse to reinvent the experience of sell cars withou leaning home. In 2019 we started a new project for a PA CA Startup. Carupi promisse to reinvent the experience of sell cars withou leaning home.</p>
     <blockquote class="article__blockquote">In 2019 we started a new project for a PA CA Startup. Carupi promisse to reinvent the experience of sell cars withou leaning home.</blockquote>
     <div class="article__role-team-wrapper row">
-      <div class="article__role-wrapper col-md-5">
-        <h3 class="article__subtitle">My Role</h3>
+      <div class="article__role-wrapper col-md-6">
+        <h3 class="article__box-subtitle">My Role</h3>
         <ul class="article__role-team-list">
           <li class="article__role-team-item">Product Designer</li>
           <li class="article__role-team-item">Team Coordinator</li>
         </ul>
       </div>
-      <div class="article__team-wrapper col-md-5 offset-md-1">
-        <h3 class="article__subtitle">Design Team</h3>
+      <div class="article__team-wrapper col-md-6">
+        <h3 class="article__box-subtitle">Design Team</h3>
         <ul class="article__role-team-list">
           <li class="article__role-team-item">Batman</li>
           <li class="article__role-team-item">Bruce</li>
@@ -24,12 +24,14 @@
       </div>
     </div>
   </div>
-  <div class="article__slider-column col-md-8">
-    <ul class="article__slider-list">
-      <li class="article__slider-item">
-        <img src="http://placehold.it/332x670" alt="" class="article__slider-image">
-      </li>
-    </ul>
+  <div class="article__slider-column col-md-7 offset-md-1">
+    <div class="article__slider-wrapper">
+      <ul class="article__slider-list">
+        <li class="article__slider-item" *ngFor="let dummy of [0, 1, 2, 3]">
+          <img width="332" height="670" src="http://placehold.it/332x670" alt="" class="article__slider-image">
+        </li>
+      </ul>
+    </div>
   </div>
   <a href="#" class="article__read-full-case read-more">Read full-case</a>
 </article>

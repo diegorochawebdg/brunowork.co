@@ -1,0 +1,79 @@
+@import "variables";
+
+.article {
+  &:not( :last-child ) {
+    margin-bottom: 180px;
+  }
+
+  &__text-column,
+  &__slider-column {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    margin-bottom: 22px;
+
+    > span {
+      color: $torch_red;
+    }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: normal;
+  }
+
+  &__text,
+  &__blockquote {
+    font-size: 20px;
+    line-height: 40px;
+    margin-bottom: 35px;
+  }
+
+  &__blockquote {
+    margin: 0 0 45px;
+    padding-left: 25px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background-color: $torch_red;
+    }
+  }
+
+  &__box-subtitle {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 17px;
+  }
+
+  &__role-team-item {
+    font-size: 18px;
+    color: $dusty_gray;
+    line-height: 30px;
+  }
+
+  &__slider-wrapper {
+    background-color: $mine_shaft;
+    padding: 100px 20px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__slider-image {
+    margin: 0 auto;
+  }
+
+  &__read-full-case {
+    margin-left: auto;
+  }
+}
