@@ -1,25 +1,22 @@
 <article class="article row">
   <div class="article__text-column col-md-4">
     <div class="article__hgroup">
-      <h1 class="article__title"><span>1.</span> Carupi App & Web Platform</h1>
-      <h2 class="article__subtitle">In 2019 we started a new project for a PA CA Startup.</h2>
+      <h1 class="article__title"><span>{{ index + 1 }}.</span> {{ content.title }}</h1>
+      <h2 class="article__subtitle">{{ content.subtitle }}</h2>
     </div>
-    <p class="article__text">In 2019 we started a new project for a PA CA Startup. Carupi promisse to reinvent the experience of sell cars withou leaning home. In 2019 we started a new project for a PA CA Startup. Carupi promisse to reinvent the experience of sell cars withou leaning home. In 2019 we started a new project for a PA CA Startup. Carupi promisse to reinvent the experience of sell cars withou leaning home.</p>
-    <blockquote class="article__blockquote">In 2019 we started a new project for a PA CA Startup. Carupi promisse to reinvent the experience of sell cars withou leaning home.</blockquote>
+    <p class="article__text">{{ content.text }}</p>
+    <blockquote class="article__blockquote">{{ content.quote }}</blockquote>
     <div class="article__role-team-wrapper row">
       <div class="article__role-wrapper col-md-6">
         <h3 class="article__box-subtitle">My Role</h3>
         <ul class="article__role-team-list">
-          <li class="article__role-team-item">Product Designer</li>
-          <li class="article__role-team-item">Team Coordinator</li>
+          <li class="article__role-team-item" *ngFor="let role of content.role">{{ role }}</li>
         </ul>
       </div>
       <div class="article__team-wrapper col-md-6">
         <h3 class="article__box-subtitle">Design Team</h3>
         <ul class="article__role-team-list">
-          <li class="article__role-team-item">Batman</li>
-          <li class="article__role-team-item">Bruce</li>
-          <li class="article__role-team-item">Wayne</li>
+          <li class="article__role-team-item" *ngFor="let team of content.design_team">{{ team }}</li>
         </ul>
       </div>
     </div>
@@ -31,6 +28,11 @@
           <img width="332" height="670" src="http://placehold.it/332x670" alt="" class="article__slider-image">
         </li>
       </ul>
+      <!-- <nav class="article__slider-controls">
+        <button class="article__slider-button article__slider-button--prev" (click)="previousSlide($event)">Previous slide</button>
+        <span class="article__slider-count"></span>
+        <button class="article__slider-button article__slider-button--next" (click)="nextSlide($event)">Next slide</button>
+      </nav> -->
     </div>
   </div>
   <a href="#" class="article__read-full-case read-more">Read full-case</a>

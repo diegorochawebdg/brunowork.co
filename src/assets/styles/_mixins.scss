@@ -1,0 +1,18 @@
+%background {
+  content: "";
+  display: block;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+%background--right {
+  @extend %background;
+  right: 0;
+  transform: translateX(90%);
+}
+
+%background--left {
+  @extend %background;
+  left: 0;
+  transform: translateX(-90%);
+}

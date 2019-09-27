@@ -1,12 +1,37 @@
 @import "variables";
+@import "mixins";
 
 .home {
-  &__title {
-    font-size: 11.4vw;
-    margin-bottom: 70px;
+  &__title-wrapper {
+    position: relative;
 
-    > span {
-      color: $torch_red;
+    &::before {
+      @extend %background--right;
+      top: 160px;
+      width: 393px;
+      height: 477px;
+      background-image: url("/assets/images/blocks.svg");
+    }
+  }
+
+  &__title {
+    font-size: 144px;
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bio-wrapper {
+    position: relative;
+    margin-bottom: 178px;
+
+    &::before {
+      @extend %background--left;
+      top: 160px;
+      width: 393px;
+      height: 477px;
+      background-image: url("/assets/images/blocks-2.svg");
+      transform: translateX(-50%);
     }
   }
 
@@ -24,13 +49,13 @@
     }
   }
 
-  &__bio-wrapper {
-    margin-bottom: 178px;
-  }
-
   &__bio-text {
     &:last-of-type {
       margin-bottom: 44px;
     }
+  }
+
+  &__article-list-item {
+    margin-bottom: 230px;
   }
 }

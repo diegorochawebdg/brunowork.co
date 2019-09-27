@@ -1,5 +1,6 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
 import { TinySliderInstance, tns } from 'node_modules/tiny-slider/src/tiny-slider';
+import { IArticle } from 'src/app/views/home/home.component';
 
 @Component({
   selector: 'app-article',
@@ -13,14 +14,28 @@ export class ArticleComponent implements AfterViewInit {
    */
   slider: TinySliderInstance;
 
-  constructor() { }
+  /**
+   * O array de conteúdos do artigo
+   */
+  @Input()
+  content: IArticle;
+
+  /**
+   * O array de conteúdos do artigo
+   */
+  @Input()
+  index: number;
+
+  constructor(
+    private element: ElementRef,
+  ) { }
 
   /**
    * Método de construção do slider de cards
    */
-  createSlider() {
+  createSlider(element: HTMLElement) {
     const sliderConfig: object = {
-      container: '.article__slider-list',
+      container: element,
       center: true,
       loop: false,
       items: 1,
@@ -33,8 +48,18 @@ export class ArticleComponent implements AfterViewInit {
     this.slider = tns(sliderConfig);
   }
 
-  ngAfterViewInit() {
-    this.createSlider();
+  previousSlide() {
+    console.log('works');
   }
 
+  /**
+   * @internal
+   */
+  ngAfterViewInit() {
+    this.element.nativeElement
+      .querySelectorAll('.article__slider-list')
+      .forEach((slider: HTMLElement) => {
+        this.createSlider(slider);
+      });
+  }
 }

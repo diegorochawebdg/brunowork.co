@@ -1,6 +1,6 @@
 <main class="home">
   <div class="home__title-wrapper">
-    <h1 class="home__title">Product Design and Strategy<span>.</span></h1>
+    <h1 class="home__title text-with-square-dot">Product Design and Strategy<sub></sub></h1>
   </div>
   <div class="home__bio-wrapper row">
     <div class="home__social-wrapper col-md-4">
@@ -26,9 +26,9 @@
   </div>
 
   <div class="home__projects-wrapper">
-    <ol class="articles-list">
-      <li class="article-list__item">
-        <app-article></app-article>
+    <ol class="home__articles-list">
+      <li class="home__article-list-item" *ngFor="let item of articles; let i = index;">
+        <app-article [content]="item" [index]="i"></app-article>
       </li>
     </ol>
   </div>
