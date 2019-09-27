@@ -1,0 +1,48 @@
+@import "variables";
+
+.main-wrapper {
+  padding-top: 60px;
+  padding-bottom: 116px;
+  overflow: hidden;
+}
+
+.page-subtitle {
+  font-size: 24px;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.read-more {
+  color: $wild_sand;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+
+  &::after {
+    content: "";
+    background-image: url("assets/images/arrow.svg");
+    background-repeat: no-repeat;
+    width: 43px;
+    height: 16px;
+    display: block;
+    margin-left: 25px;
+    transition: transform 300ms ease;
+  }
+
+  &:hover {
+    &::after {
+      transform: translateX(5px);
+    }
+  }
+}
+
+.text-with-square-dot {
+  > sub {
+    position: relative;
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: $torch_red;
+    vertical-align: baseline;
+  }
+}
