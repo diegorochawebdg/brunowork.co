@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~8.2.5",
     "@angular/router": "~8.2.5",
     "bootstrap": "^4.3.1",
+    "prismic-javascript": "^2.1.1",
     "rxjs": "~6.5.3",
     "tiny-slider": "^2.9.2",
     "tslib": "^1.9.0",
