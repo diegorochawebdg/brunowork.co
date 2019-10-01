@@ -1,4 +1,4 @@
-export interface Context {
+export interface IContext {
   api: any;
   endpoint: string;
   accessToken?: string;

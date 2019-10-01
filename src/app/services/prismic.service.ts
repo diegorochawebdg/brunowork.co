@@ -1,27 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import Prismic from 'prismic-javascript';
 
-import { Context } from './context';
-import { Preview } from './preview';
-import { CONFIG } from '../../prismic-configuration';
+import { Config } from '../utils/prismic-config';
 
 @Injectable()
 export class PrismicService {
 
-  constructor(private http: Http) {}
+  constructor(private http: HttpClient) {}
 
   buildContext() {
     const options = {};
-    return Prismic.api(CONFIG.apiEndpoint, {accessToken: CONFIG.accessToken})
+    return Prismic.api(Config.apiEndpoint, {accessToken: Config.accessToken})
       .then((api) => {
         return {
           api,
-          endpoint: CONFIG.apiEndpoint,
-          accessToken: CONFIG.accessToken,
-          linkResolver: CONFIG.linkResolver,
+          endpoint: Config.apiEndpoint,
+          accessToken: Config.accessToken,
+          linkResolver: Config.linkResolver,
           toolbar: this.toolbar,
-        } as Context;
+        };
+        // } as Context;
       })
       .catch(e => console.log(`Error during connection to your Prismic API: ${e}`));
   }
@@ -31,7 +30,7 @@ export class PrismicService {
     const headers = new Headers({ 'Content-Type': 'application/json' });
 
     if(infos.isConfigured) {
-      this.http.post(`${infos.repoURL}/app/settings/onboarding/run`, null, headers)
+      this.http.post(`${infos.repoURL}/app/settings/onboarding/run`, headers)
       .subscribe(
         null,
         (err) => console.log(`Cannot access your repository, check your api endpoint: ${err}`)
@@ -41,8 +40,8 @@ export class PrismicService {
 
   getRepositoryInfos() {
     const repoRegexp = /^(https?:\/\/([-\w]+)\.[a-z]+\.(io|dev))\/api(\/v2)?$/;
-    const [_, repoURL, name] = CONFIG.apiEndpoint.match(repoRegexp);
-    const isConfigured = name !== 'your-repo-name';
+    const [_, repoURL, name] = Config.apiEndpoint.match(repoRegexp);
+    const isConfigured = name !== 'brunowork-co';
     return { repoURL, name, isConfigured };
   }
 
@@ -51,18 +50,19 @@ export class PrismicService {
     if (maybeCurrentExperiment) {
       window['PrismicToolbar'].startExperiment(maybeCurrentExperiment.googleId());
     }
-    window['PrismicToolbar'].setup(CONFIG.apiEndpoint);
+    window['PrismicToolbar'].setup(Config.apiEndpoint);
   }
 
   preview(token) {
     return this.buildContext()
     .then(ctx => {
-      return ctx.api.previewSession(token, ctx.linkResolver, '/').then((url) => {
+      return ctx['api'].previewSession(token, ctx['linkResolver'], '/').then((url) => {
         return {
           cookieName: Prismic.previewCookie,
           token: token,
           redirectURL: url
-        } as Preview;
+        };
+        // } as Preview;
       });
     });
   }
