@@ -1,9 +1,13 @@
 @import "variables";
+@import "~bootstrap/scss/bootstrap-grid.scss";
 
 .main-wrapper {
-  padding-top: 60px;
-  padding-bottom: 116px;
+  padding: 60px 0 116px;
   overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    padding: 30px 0;
+  }
 }
 
 .page-subtitle {
@@ -44,5 +48,12 @@
     height: 26px;
     background: $torch_red;
     vertical-align: baseline;
+  }
+
+  @include media-breakpoint-down(md) {
+    > sub {
+      width: 15px;
+      height: 15px;
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 export interface IHeaderLinks {
   label: string;
@@ -11,7 +11,7 @@ export interface IHeaderLinks {
   templateUrl: './header.component.html',
   styleUrls: [ './header.component.scss' ],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   headerLinks: IHeaderLinks[] = [
     {
@@ -36,9 +36,26 @@ export class HeaderComponent implements OnInit {
     }
   ];
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  headerMobileLinks: IHeaderLinks[] = [
+    {
+      label: 'about',
+      title: 'Read more about myself',
+      url: '/about',
+    },
+    {
+      label: 'articles',
+      title: 'View my articles in Medium.com',
+      url: 'https://medium.com/@brunoalvesfernandes/highlights',
+    },
+    {
+      label: 'LinkedIn',
+      title: 'see my LinkedIn profile',
+      url: '',
+    },
+    {
+      label: 'Dribble',
+      title: 'see my Dribble profile',
+      url: '',
+    }
+  ];
 }

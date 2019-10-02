@@ -1,5 +1,5 @@
 <header class="header row">
-  <a [routerLink]="['/']" class="header__logo col-md-auto">
+  <a [routerLink]="['/']" class="header__logo col-auto">
     <img src="assets/images/brunowork.svg" alt="Logotipo Brunowork" class="header__logo-image">
     Brunowork.co
   </a>
@@ -25,4 +25,36 @@
       </li>
     </ul>
   </nav>
+  <button class="header__mobile-menu-opener col-auto">Open mobile menu</button>
+
+  <div class="header__mobile-menu-wrapper">
+    <nav class="header__mobile-menu">
+      <ul class="header__mobile-menu-list">
+        <li *ngFor="let link of headerMobileLinks" class="header__mobile-menu-item">
+          <a
+            *ngIf="!link.url.includes('//') && !link.url.includes('mailto')"
+            [routerLink]="link.url"
+            [title]="link.title"
+            routerLinkActive="active"
+            class="header__mobile-link">
+            {{ link.label }}
+          </a>
+          <a
+            *ngIf="link.url.includes('//') || link.url.includes('mailto')"
+            [href]="link.url"
+            [title]="link.title"
+            target="_blank"
+            class="header__mobile-link">
+            {{ link.label }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <footer class="header__mobile-menu-footer">
+      <a href="mailto:hello@brunowork.co" class="header__mobile-menu-footer-link">
+        Let's Talk!
+        <span>hello@brunowork.co</span>
+      </a>
+    </footer>
+  </div>
 </header>

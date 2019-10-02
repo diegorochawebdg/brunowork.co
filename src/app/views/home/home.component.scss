@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "~bootstrap/scss/bootstrap-grid.scss";
 
 .home {
   &__title-wrapper {
@@ -57,5 +58,11 @@
 
   &__article-list-item {
     margin-bottom: 230px;
+  }
+
+  @include media-breakpoint-down(md) {
+    &__title {
+      font-size: 20vw;
+    }
   }
 }
