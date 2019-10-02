@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
 import { TinySliderInstance, tns } from 'node_modules/tiny-slider/src/tiny-slider';
-import { IArticle } from 'src/app/views/home/home.component';
 
 @Component({
   selector: 'app-article',
@@ -8,7 +7,6 @@ import { IArticle } from 'src/app/views/home/home.component';
   styleUrls: [ './article.component.scss' ],
 })
 export class ArticleComponent implements AfterViewInit {
-
   /**
    * A instância do slider
    */
@@ -18,7 +16,7 @@ export class ArticleComponent implements AfterViewInit {
    * O array de conteúdos do artigo
    */
   @Input()
-  content: IArticle;
+  content;
 
   /**
    * O array de conteúdos do artigo
@@ -26,6 +24,9 @@ export class ArticleComponent implements AfterViewInit {
   @Input()
   index: number;
 
+  /**
+   * @internal
+   */
   constructor(
     private element: ElementRef,
   ) { }
@@ -43,6 +44,7 @@ export class ArticleComponent implements AfterViewInit {
       controlsPosition: 'bottom',
       controlsText: [ 'Previous Slide', 'Next Slide' ],
       nav: false,
+      autoHeight: true,
     };
 
     this.slider = tns(sliderConfig);

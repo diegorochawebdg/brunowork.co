@@ -25,10 +25,10 @@
     </div>
   </div>
 
-  <div class="home__projects-wrapper">
+  <div class="home__projects-wrapper" *ngIf="content">
     <ol class="home__articles-list">
-      <li class="home__article-list-item" *ngFor="let item of articles; let i = index;">
-        <app-article [content]="item" [index]="i"></app-article>
+      <li class="home__article-list-item" *ngFor="let article of content.body; let i = index;">
+        <app-article [content]="article" [index]="i"></app-article>
       </li>
     </ol>
   </div>
