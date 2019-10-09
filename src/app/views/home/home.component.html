@@ -27,7 +27,7 @@
 
   <div class="home__projects-wrapper" *ngIf="content">
     <ol class="home__articles-list">
-      <li class="home__article-list-item" *ngFor="let article of content.body; let i = index;">
+      <li class="home__article-list-item" *ngFor="let article of content['body']; let i = index;">
         <app-article [content]="article" [index]="i"></app-article>
       </li>
     </ol>
