@@ -1,4 +1,5 @@
 @import "variables";
+@import "~bootstrap/scss/bootstrap-grid.scss";
 
 .article {
   &:not( :last-child ) {
@@ -75,5 +76,35 @@
 
   &__read-full-case {
     margin-left: auto;
+  }
+
+  @include media-breakpoint-down(md) {
+    display: block;
+
+    &__subtitle {
+      margin-bottom: 40px;
+    }
+
+    &__role-wrapper,
+    &__team-wrapper {
+      display: flex;
+    }
+
+    &__box-subtitle {
+      flex-basis: 100px;
+    }
+
+    &__slider-column {
+      display: none;
+      
+    }
+    
+    &__slider-wrapper {
+      &--mobile {
+        display: flex;
+        height: auto;
+        margin-bottom: 40px;
+      }
+    }
   }
 }

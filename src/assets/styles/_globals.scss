@@ -38,6 +38,17 @@
       transform: translateX(5px);
     }
   }
+
+  @include media-breakpoint-down(md) {
+    color: $tundora;
+    font-size: 20px;
+    display: flex;
+    justify-content: flex-end;
+
+    &::after {
+      filter: grayscale(1);
+    }
+  }
 }
 
 .text-with-square-dot {

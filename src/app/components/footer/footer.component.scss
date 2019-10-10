@@ -1,5 +1,6 @@
 @import "variables";
 @import "mixins";
+@import "~bootstrap/scss/bootstrap-grid.scss";
 
 .footer {
   margin-top: 140px;
@@ -50,5 +51,15 @@
 
   &__social-link {
     color: $white;
+  }
+
+  @include media-breakpoint-down(md) {
+    &__text {
+      > a {
+        display: block;
+        word-break: break-all;
+        font-size: 16vw;
+      }
+    }
   }
 }

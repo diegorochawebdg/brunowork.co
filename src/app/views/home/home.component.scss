@@ -56,6 +56,11 @@
     }
   }
 
+  &__articles-list {
+    margin-top: 0;
+    padding-left: 0;
+  }
+
   &__article-list-item {
     margin-bottom: 230px;
   }
@@ -63,6 +68,24 @@
   @include media-breakpoint-down(md) {
     &__title {
       font-size: 20vw;
+    }
+
+    &__social-wrapper {
+      display: none;
+    }
+
+    &__bio-wrapper {
+      margin-bottom: 160px;
+
+      &::before {
+        top: auto;
+        bottom: 0;
+        transform: translate(-55%, 60%)
+      }
+    }
+
+    &__bio-text {
+      font-size: 20px;
     }
   }
 }

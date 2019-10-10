@@ -5,6 +5,18 @@
       <h1 class="article__title"><span>{{ index + 1 }}.</span> {{ content.primary.article_title[0].text }}</h1>
       <h2 class="article__subtitle">{{ content.primary.article_subtitle[0].text }}</h2>
     </div>
+    <div class="article__slider-wrapper article__slider-wrapper--mobile">
+      <ul class="article__slider-list">
+        <li class="article__slider-item" *ngFor="let slide of content.items">
+          <img [width]="slide.slide_image.dimensions.width" [height]="slide.slide_image.dimensions.height" [src]="slide.slide_image.url" [alt]="slide.slide_image.alt" class="article__slider-image">
+        </li>
+      </ul>
+      <!-- <nav class="article__slider-controls">
+        <button class="article__slider-button article__slider-button--prev" (click)="previousSlide($event)">Previous slide</button>
+        <span class="article__slider-count"></span>
+        <button class="article__slider-button article__slider-button--next" (click)="nextSlide($event)">Next slide</button>
+      </nav> -->
+    </div>
     <p class="article__text">{{ content.primary.article_text[0].text }}</p>
     <blockquote class="article__blockquote">{{ content.primary.article_blockquote[0].text }}</blockquote>
     <div class="article__role-team-wrapper row">
