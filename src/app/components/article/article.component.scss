@@ -68,6 +68,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   &__slider-image {
@@ -96,7 +100,6 @@
 
     &__slider-column {
       display: none;
-      
     }
     
     &__slider-wrapper {

@@ -26,7 +26,6 @@
 
     &::before {
       @extend %background;
-      position: absolute;
       right: 50px;
       top: -80px;
       width: 245px;
@@ -54,12 +53,42 @@
   }
 
   @include media-breakpoint-down(md) {
+    &__text-wrapper {
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        background-repeat: no-repeat;
+        right: -80px;
+        top: -130px;
+        width: 245px;
+        height: 255px;
+        transform: scale(.8);
+        background-image: url("~src/assets/images/asterisks.svg");
+      }
+    }
+
     &__text {
+      font-size: 19vw;
+      line-height: 1.2em;
+
       > a {
         display: block;
         word-break: break-all;
         font-size: 16vw;
       }
+    }
+
+    &__copyright-social-wrapper {
+      &::before {
+        display: none;
+      }
+    }
+
+    &__social-wrapper {
+      display: none;
     }
   }
 }

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{FSD6:function(n,b,r){"use strict";r.r(b);var o=r("8Y7J");class s{}var t=r("SVse");r.d(b,"AboutModuleNgFactory",function(){return u});var u=o.lb(s,[],function(n){return o.wb([o.xb(512,o.j,o.W,[[8,[]],[3,o.j],o.v]),o.xb(4608,t.l,t.k,[o.s,[2,t.r]]),o.xb(1073742336,t.b,t.b,[]),o.xb(1073742336,s,s,[])])})}}]);
