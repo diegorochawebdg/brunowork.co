@@ -50,10 +50,6 @@ export class ArticleComponent implements AfterViewInit {
     this.slider = tns(sliderConfig);
   }
 
-  previousSlide() {
-    console.log('works');
-  }
-
   /**
    * @internal
    */

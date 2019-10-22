@@ -78,6 +78,20 @@
     margin: 0 auto;
   }
 
+  &__slider-item {
+    video {
+      width: 100%;
+      max-width: 290px;
+      height: auto;
+    }
+  }
+
+  &__video-container {
+    width: 290px;
+    height: 576px;
+    margin: 0 auto;
+  }
+
   &__read-full-case {
     margin-left: auto;
   }
@@ -101,7 +115,7 @@
     &__slider-column {
       display: none;
     }
-    
+
     &__slider-wrapper {
       &--mobile {
         display: flex;

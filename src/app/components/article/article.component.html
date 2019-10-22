@@ -8,7 +8,24 @@
     <div class="article__slider-wrapper article__slider-wrapper--mobile">
       <ul class="article__slider-list">
         <li class="article__slider-item" *ngFor="let slide of content.items">
-          <img [width]="slide.slide_image.dimensions.width" [height]="slide.slide_image.dimensions.height" [src]="slide.slide_image.url" [alt]="slide.slide_image.alt" class="article__slider-image">
+          <div *ngIf="slide.slide_video.url" class="article__video-container">
+            <video
+              width="290"
+              height="576"
+              autoplay
+              loop
+              muted
+              playsinline>
+              <source [src]="slide.slide_video.url">
+            </video>
+          </div>
+          <img
+            *ngIf="slide.slide_image.url && !slide.slide_video.url"
+            [src]="slide.slide_image.url"
+            [width]="slide.slide_image.dimensions.width / 2"
+            [height]="slide.slide_image.dimensions.height / 2"
+            [alt]="slide.slide_image.alt"
+            class="article__slider-image">
         </li>
       </ul>
       <!-- <nav class="article__slider-controls">
@@ -38,7 +55,24 @@
     <div class="article__slider-wrapper">
       <ul class="article__slider-list">
         <li class="article__slider-item" *ngFor="let slide of content.items">
-          <img [width]="slide.slide_image.dimensions.width" [height]="slide.slide_image.dimensions.height" [src]="slide.slide_image.url" [alt]="slide.slide_image.alt" class="article__slider-image">
+          <div *ngIf="slide.slide_video.url" class="article__video-container">
+            <video
+              width="290"
+              height="576"
+              autoplay
+              loop
+              muted
+              playsinline>
+              <source [src]="slide.slide_video.url">
+            </video>
+          </div>
+          <img
+            *ngIf="slide.slide_image.url && !slide.slide_video.url"
+            [width]="slide.slide_image.dimensions.width / 2"
+            [height]="slide.slide_image.dimensions.height / 2"
+            [src]="slide.slide_image.url"
+            [alt]="slide.slide_image.alt"
+            class="article__slider-image">
         </li>
       </ul>
       <!-- <nav class="article__slider-controls">

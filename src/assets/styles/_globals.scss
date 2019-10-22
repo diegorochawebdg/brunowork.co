@@ -52,13 +52,14 @@
 }
 
 .text-with-square-dot {
-  > sub {
+  &::after {
+    content: "";
     position: relative;
     display: inline-block;
     width: 26px;
     height: 26px;
-    background: $torch_red;
     vertical-align: baseline;
+    background: $torch_red;
   }
 
   @include media-breakpoint-down(md) {

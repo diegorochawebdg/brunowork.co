@@ -54,8 +54,7 @@ export class HomeComponent implements OnInit {
   content: object;
 
   constructor(
-    private prismicService: PrismicService, 
-    private route: ActivatedRoute,
+    private prismicService: PrismicService,
   ) { }
 
   /**
