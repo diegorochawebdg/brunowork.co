@@ -16,10 +16,10 @@ export class ArticleComponent implements AfterViewInit {
    * O array de conteúdos do artigo
    */
   @Input()
-  content;
+  content: any;
 
   /**
-   * O array de conteúdos do artigo
+   * O número do artigo
    */
   @Input()
   index: number;
