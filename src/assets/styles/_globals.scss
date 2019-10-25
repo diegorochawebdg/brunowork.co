@@ -1,6 +1,13 @@
 @import "variables";
 @import "~bootstrap/scss/bootstrap-grid.scss";
 
+body {
+  &.about {
+    background-color: $alabaster;
+    color: $cod_gray;
+  }
+}
+
 .main-wrapper {
   padding: 60px 0 116px;
   overflow: hidden;
@@ -14,6 +21,10 @@
   font-size: 24px;
   margin-bottom: 32px;
   font-weight: 500;
+
+  &--red {
+    color: $torch_red;
+  }
 }
 
 .read-more {

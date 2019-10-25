@@ -50,6 +50,10 @@
 
   &__social-link {
     color: $white;
+
+    body.about & {
+      color: $cod_gray;
+    }
   }
 
   @include media-breakpoint-down(md) {

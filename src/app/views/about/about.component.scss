@@ -1,0 +1,71 @@
+@import "variables";
+@import "mixins";
+@import "~bootstrap/scss/bootstrap-grid.scss";
+
+.about {
+  &__title {
+    position: relative;
+    margin-bottom: 80px;
+
+    &::before {
+      @extend %background--right;
+      top: 40px;
+      right: 100px;
+      width: 393px;
+      height: 477px;
+      background-image: url("~src/assets/images/blocks.svg");
+    }
+  }
+
+  &__the-title {
+    font-size: 8vw;
+    line-height: 1em;
+  }
+
+  &__date {
+    color: $torch_red;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  &__profile-picture-date {
+    margin-bottom: 80px;
+  }
+
+  &__profile-text {
+    margin-bottom: 90px;
+  }
+
+  &__profile-text-wrapper {
+    > p {
+      &:not( :last-child ) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__skills {
+    margin-bottom: 90px;
+  }
+  
+  &__skills-text {
+    font-size: 60px;
+    line-height: 1.4em;
+    font-weight: 500;
+  }
+
+  &__photography {
+    background-color: $wild_sand;
+    margin-bottom: 80px;
+  }
+
+  &__experience {
+    margin-bottom: 60px;
+  }
+
+  &__life-purpose {
+    > div {
+      margin-left: auto;
+    }
+  }
+}

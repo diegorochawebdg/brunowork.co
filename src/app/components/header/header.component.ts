@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 export interface IHeaderLinks {
   label: string;
@@ -10,6 +10,7 @@ export interface IHeaderLinks {
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: [ './header.component.scss' ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
 
