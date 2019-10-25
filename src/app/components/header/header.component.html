@@ -10,6 +10,7 @@
           *ngIf="!link.url.includes('//') && !link.url.includes('mailto')"
           [routerLink]="link.url"
           [title]="link.title"
+          [routerLinkActiveOptions]="{ exact: true }"
           routerLinkActive="active"
           class="header__link">
           {{ link.label }}
