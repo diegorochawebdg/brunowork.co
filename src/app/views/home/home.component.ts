@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
    */
   ngOnInit() {
     this.prismicService
-      .getPrismicContent('/')
+      .getPrismicContent('/', 'articles-list')
       .subscribe(res => {
         this.content = res['results'][0]['data'];
       });

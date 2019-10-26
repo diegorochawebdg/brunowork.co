@@ -10,7 +10,7 @@
     &::before {
       @extend %background--right;
       top: 40px;
-      right: 100px;
+      right: 220px;
       width: 393px;
       height: 477px;
       background-image: url("~src/assets/images/blocks.svg");
@@ -18,25 +18,33 @@
   }
 
   &__the-title {
-    font-size: 8vw;
+    font-size: 9.8vw;
     line-height: 1em;
   }
 
   &__date {
     color: $torch_red;
+    display: block;
     font-size: 22px;
     font-weight: 500;
+    white-space: nowrap;
   }
 
   &__profile-picture-date {
     margin-bottom: 80px;
+  }
+      
+  &__profile-picture {
+    margin-left: auto;
   }
 
   &__profile-text {
     margin-bottom: 90px;
   }
 
-  &__profile-text-wrapper {
+  &__profile-text-wrapper,
+  &__experience-wrapper,
+  &__life-purpose-wrapper {
     > p {
       &:not( :last-child ) {
         margin-bottom: 25px;
@@ -57,6 +65,12 @@
   &__photography {
     background-color: $wild_sand;
     margin-bottom: 80px;
+    padding: 90px 0;
+  }
+
+  &__photography-list-item {
+    width: calc((100% - 80px) / 3);
+    margin-bottom: 40px;
   }
 
   &__experience {
@@ -66,6 +80,20 @@
   &__life-purpose {
     > div {
       margin-left: auto;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    &__photography-list-item {
+      width: calc((100% - 40px) / 2);
+      margin-bottom: 40px;
+    }
+  }
+  
+  @include media-breakpoint-down(sm) {
+    &__photography-list-item {
+      width: 100%;
+      margin-bottom: 40px;
     }
   }
 }

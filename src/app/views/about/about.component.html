@@ -1,58 +1,84 @@
-<main class="about">
+<main class="about" *ngIf="content">
   <div class="about__title row">
-    <div class="about__title-wrapper col-9">
-      <h1 class="about__the-title text-with-square-dot">Self knowledge is the key to success</h1>
+    <div class="container">
+      <div class="about__title-wrapper col-9">
+        <h1 class="about__the-title text-with-square-dot" [innerHTML]="content['page_title'][0]['text']"></h1>
+      </div>
     </div>
   </div>
 
-  <div class="about__profile-picture-date row">
-    <div class="about__date-wrapper col">
-      <span class="about__date">Updated - Sept. 2019</span>
-    </div>
-    <div class="about__profile-picture-wrapper col col-auto">
-      <img src="http://placehold.it/728x463" alt="">
+  <div class="about__profile-picture-date">
+    <div class="container">
+      <div class="row">
+        <div class="about__date-wrapper col">
+          <span class="about__date">Updated - {{ content['post_date'] | date: 'LLL. yyyy' }}</span>
+        </div>
+        <div class="about__profile-picture-wrapper col-md-8">
+          <img 
+            [ngClass]="'about__profile-picture'"
+            [src]="content['profile_image']['url']" 
+            [alt]="content['profile_image']['alt']">
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="about__profile-text row">
-    <div class="col-md-8">
-      <h2 class="about__profile-subtitle page-subtitle">Bruno Alves Fernandes</h2>
-      <div class="about__profile-text-wrapper">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aspernatur error nostrum dolore quos harum fugit et! Tenetur quia, consectetur eaque quos fugiat nostrum, placeat sapiente ratione molestiae esse ut?</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias aspernatur error nostrum dolore quos harum fugit et! Tenetur quia, consectetur eaque quos fugiat nostrum, placeat sapiente ratione molestiae esse ut?</p>
+  <div class="about__profile-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h2 class="about__profile-subtitle page-subtitle">Bruno Alves Fernandes</h2>
+          <div class="about__profile-text-wrapper">
+            <p *ngFor="let text of content['profile_text']" [innerHTML]="text['text']"></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   
   <div class="about__skills">
-    <h2 class="about__skills-subtitle page-subtitle page-subtitle--red">Skills</h2>
-    <p class="about__skills-text">Product Design, Agile, Ux Research, Ux Strategy, Data Analysis, Business, Visual Design, Prototyping and Leadership.</p>
+    <div class="container">
+      <h2 class="about__skills-subtitle page-subtitle page-subtitle--red">Skills</h2>
+      <p class="about__skills-text" *ngFor="let text of content['skills_text']" [innerHTML]="text['text']"></p>
+    </div>
   </div>
   
   <div class="about__photography">
-    <h2 class="about__skills-subtitle page-subtitle page-subtitle--red">Urban photography with iPhone</h2>
-    <ul class="about__photography-list">
-      <li class="about__photography-list-item">
-      </li>
-    </ul>
+    <div class="container">
+      <h2 class="about__skills-subtitle page-subtitle page-subtitle--red">Urban photography {{ '{' }} with iPhone {{ '}' }}</h2>
+      <ngx-masonry [useImagesLoaded]="true" [options]="masonryOptions">
+        <div
+          *ngFor="let item of content['urban_photography']"
+          ngxMasonryItem 
+          class="masonry-item about__photography-list-item">
+          <img [src]="item.photography_image.url" [alt]="item.photography_image.alt">
+        </div>
+      </ngx-masonry>
+    </div>
   </div>
 
-  <div class="about__experience row">
-    <div class="col-md-8">
-      <h2 class="about__experience-subtitle page-subtitle">Background and Experience</h2>
-      <div class="about__experience-wrapper">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eveniet ea distinctio dicta autem deleniti eligendi doloribus odit velit! Eaque excepturi quidem culpa inventore fugiat quod quos doloribus. Delectus, natus!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eveniet ea distinctio dicta autem deleniti eligendi doloribus odit velit! Eaque excepturi quidem culpa inventore fugiat quod quos doloribus. Delectus, natus!</p>
+  <div class="about__experience">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <h2 class="about__experience-subtitle page-subtitle">Background and Experience</h2>
+          <div class="about__experience-wrapper">
+            <p class="about__experience-text" *ngFor="let text of content['experience_text']" [innerHTML]="text['text']"></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
   
-  <div class="about__life-purpose row">
-    <div class="col-md-8">
-      <h2 class="about__life-purpose-subtitle page-subtitle">Life Purpose</h2>
-      <div class="about__life-purpose-wrapper">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eveniet ea distinctio dicta autem deleniti eligendi doloribus odit velit! Eaque excepturi quidem culpa inventore fugiat quod quos doloribus. Delectus, natus!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt eveniet ea distinctio dicta autem deleniti eligendi doloribus odit velit! Eaque excepturi quidem culpa inventore fugiat quod quos doloribus. Delectus, natus!</p>
+  <div class="about__life-purpose">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7 ml-auto">
+          <h2 class="about__life-purpose-subtitle page-subtitle">Life Purpose</h2>
+          <div class="about__life-purpose-wrapper">
+            <p class="about__life-purpose-text" *ngFor="let text of content['purpose_text']" [innerHTML]="text['text']"></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

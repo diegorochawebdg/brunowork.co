@@ -1,36 +1,44 @@
-<main class="home">
+<main class="home" *ngIf="content">
   <div class="home__title-wrapper">
-    <h1 class="home__title text-with-square-dot" [innerHTML]="content['page_title'][0]['text']"></h1>
-  </div>
-  <div class="home__bio-wrapper row">
-    <div class="home__social-wrapper col-md-4">
-      <h3 class="home__social-title page-subtitle">Let's be friends.</h3>
-      <ul class="home__social-list">
-        <li class="home__social-list-item">
-          <a href="https://www.linkedin.com/in/bruno-alves-fernandes" target="_blank" class="home__social-link">LinkedIn</a>
-        </li>
-        <li class="home__social-list-item">
-          <a href="https://medium.com/@brunoalvesfernandes/following" target="_blank" class="home__social-link">Medium</a>
-        </li>
-        <li class="home__social-list-item">
-          <a href="https://dribbble.com/brunoaffx" target="_blank" class="home__social-link">Dribbble</a>
-        </li>
-      </ul>
+    <div class="container">
+      <h1 class="home__title text-with-square-dot" [innerHTML]="content['page_title'][0]['text']"></h1>
     </div>
-    <div class="home__bio-text-wrapper col-md-7 offset-md-1">
-      <h3 class="home__bio-title page-subtitle">Bruno Alves Fernandes</h3>
-      <div class="home__bio-text-wrapper" *ngFor="let text of content['bio_description']">
-        <p class="home__bio-text" [innerHTML]="text['text']"></p>
+  </div>
+  <div class="home__bio-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="home__social-wrapper col-md-4">
+          <h3 class="home__social-title page-subtitle">Let's be friends.</h3>
+          <ul class="home__social-list">
+            <li class="home__social-list-item">
+              <a href="https://www.linkedin.com/in/bruno-alves-fernandes" target="_blank" class="home__social-link">LinkedIn</a>
+            </li>
+            <li class="home__social-list-item">
+              <a href="https://medium.com/@brunoalvesfernandes/following" target="_blank" class="home__social-link">Medium</a>
+            </li>
+            <li class="home__social-list-item">
+              <a href="https://dribbble.com/brunoaffx" target="_blank" class="home__social-link">Dribbble</a>
+            </li>
+          </ul>
+        </div>
+        <div class="home__bio-text-wrapper col-md-7 offset-md-1">
+          <h3 class="home__bio-title page-subtitle">Bruno Alves Fernandes</h3>
+          <div class="home__bio-text-wrapper" *ngFor="let text of content['bio_description']">
+            <p class="home__bio-text" [innerHTML]="text['text']"></p>
+          </div>
+          <a [routerLink]="['/about']" class="home__bio-read-more read-more">Full bio</a>
+        </div>
       </div>
-      <a [routerLink]="['/about']" class="home__bio-read-more read-more">Full bio</a>
     </div>
   </div>
 
-  <div class="home__projects-wrapper" *ngIf="content">
-    <ol class="home__articles-list">
-      <li class="home__article-list-item" *ngFor="let article of content['body']; let i = index;">
-        <app-article [content]="article" [index]="i"></app-article>
-      </li>
-    </ol>
+  <div class="home__projects-wrapper">
+    <div class="container">
+      <ol class="home__articles-list">
+        <li class="home__article-list-item" *ngFor="let article of content['body']; let i = index;">
+          <app-article [content]="article" [index]="i"></app-article>
+        </li>
+      </ol>
+    </div>
   </div>
 </main>

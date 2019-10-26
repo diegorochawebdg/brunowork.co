@@ -12,7 +12,7 @@ export class PrismicService {
     private http: HttpClient,
   ) { }
 
-  getPrismicContent(pageUrl: string) {
+  getPrismicContent(pageUrl: string, pageType: string) {
     return this.http.get(this.prismicApiEndpoint)
       .pipe(
         map(res => {
@@ -20,11 +20,11 @@ export class PrismicService {
         }),
       )
       .pipe(
-        mergeMap((data: string) => {
+        mergeMap(() => {
           return this.http.get(`${this.prismicApiEndpoint}/documents/search`, {
             params: {
               ref: this.masterRef,
-              q: `[[at(my.articles-list.url, "${[ pageUrl ]}")]]`,
+              q: `[[at(my.${pageType}.url, "${[ pageUrl ]}")]]`,
             },
           });
         }),

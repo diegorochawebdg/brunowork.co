@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxMasonryOptions } from 'ngx-masonry';
 import { PrismicService } from 'src/app/services/prismic.service';
 
 @Component({
@@ -11,7 +12,14 @@ export class AboutComponent implements OnInit {
   /**
    * O conteúdo dos artigos a serem exibidos
    */
-  content: object;
+  content?: object;
+
+  /**
+   * Opções da biblioteca Masonry
+   */
+  masonryOptions: NgxMasonryOptions = {
+    gutter: 40,
+  };
 
   constructor(
     private prismicService: PrismicService,
@@ -22,7 +30,7 @@ export class AboutComponent implements OnInit {
    */
   ngOnInit() {
     this.prismicService
-      .getPrismicContent('/about')
+      .getPrismicContent('/about', 'about_page')
       .subscribe(res => {
         this.content = res['results'][0]['data'];
       });
