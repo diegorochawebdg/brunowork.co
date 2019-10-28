@@ -9,11 +9,11 @@ body {
 }
 
 .main-wrapper {
-  padding: 60px 0 116px;
+  padding: 280px 0 116px;
   overflow: hidden;
 
   @include media-breakpoint-down(md) {
-    padding: 30px 0;
+    padding: 146px 0 30px;
   }
 }
 

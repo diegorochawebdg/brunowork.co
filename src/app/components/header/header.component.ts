@@ -1,4 +1,5 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, HostListener, Renderer2, ElementRef } from '@angular/core';
+import { MobileMenuService } from 'src/app/services/mobile-menu.service';
 
 export interface IHeaderLinks {
   label: string;
@@ -13,6 +14,29 @@ export interface IHeaderLinks {
   encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
+
+  isMobileMenuOpened: boolean;
+
+  constructor(
+    private mobileMenuService: MobileMenuService,
+  ) {
+    mobileMenuService.$isMobileMenuOpened.subscribe(value => {
+      this.isMobileMenuOpened = value;
+    });
+  }
+
+  /**
+   * Adiciona uma classe no header quando a página scrollar
+   */
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    if (window.pageYOffset > 100) {
+      let element = document.getElementById('header');
+      return element.classList.add('sticky');
+    }
+    let element = document.getElementById('header');
+    return element.classList.remove('sticky');
+  }
 
   headerLinks: IHeaderLinks[] = [
     {
@@ -59,4 +83,12 @@ export class HeaderComponent {
       url: '',
     }
   ];
+
+  closeMobileMenu() {
+    this.mobileMenuService.closeMobileMenu();
+  }
+  
+  toggleMobileMenu() {
+    this.mobileMenuService.toggleMobileMenu();
+  }
 }

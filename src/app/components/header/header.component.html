@@ -1,7 +1,7 @@
-<header class="header row">
+<header id="header" class="header" [ngClass]="{'mobile-menu-opened': isMobileMenuOpened}">
   <div class="container">
     <div class="row">
-      <a [routerLink]="['/']" class="header__logo col-auto">
+      <a [routerLink]="['/']" (click)="closeMobileMenu()" class="header__logo col-auto">
         <img src="assets/images/brunowork.svg" alt="Logotipo Brunowork" class="header__logo-image">
         Brunowork.co
       </a>
@@ -28,7 +28,9 @@
           </li>
         </ul>
       </nav>
-      <button class="header__mobile-menu-opener col-auto">Open mobile menu</button>
+      <div class="header__mobile-menu-opener-wrapper col-auto">
+        <button class="header__mobile-menu-opener" (click)="toggleMobileMenu()">Open mobile menu</button>
+      </div>
     
       <div class="header__mobile-menu-wrapper">
         <nav class="header__mobile-menu">
@@ -39,6 +41,7 @@
                 [routerLink]="link.url"
                 [title]="link.title"
                 routerLinkActive="active"
+                (click)="closeMobileMenu()"
                 class="header__mobile-link">
                 {{ link.label }}
               </a>
@@ -47,6 +50,7 @@
                 [href]="link.url"
                 [title]="link.title"
                 target="_blank"
+                (click)="closeMobileMenu()"
                 class="header__mobile-link">
                 {{ link.label }}
               </a>

@@ -49,6 +49,14 @@ export class ArticleComponent implements AfterViewInit {
 
     this.slider = tns(sliderConfig);
   }
+  
+  destroySlider() {
+    this.slider.destroy();
+  }
+  
+  refreshSlider() {
+    this.slider.refresh();
+  }
 
   /**
    * @internal
@@ -59,5 +67,14 @@ export class ArticleComponent implements AfterViewInit {
       .forEach((slider: HTMLElement) => {
         this.createSlider(slider);
       });
+
+    setTimeout(() => {
+      this.refreshSlider();
+    }, 2000);
+  }
+
+  ngOnDestroy() {
+    console.log(this.slider);
+    this.destroySlider();
   }
 }
