@@ -25,6 +25,10 @@ body {
   &--red {
     color: $torch_red;
   }
+
+  @include media-breakpoint-down(md) {
+    font-size: 20px;
+  }
 }
 
 .read-more {
@@ -74,7 +78,7 @@ body {
   }
 
   @include media-breakpoint-down(md) {
-    > sub {
+    &::after {
       width: 15px;
       height: 15px;
     }

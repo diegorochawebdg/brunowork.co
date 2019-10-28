@@ -11,6 +11,10 @@
   z-index: 2;
   background-color: $cod_gray;
   transition: all 500ms ease;
+
+  .about & {
+    background: $alabaster;
+  }
   
   .row {
     display: flex;
@@ -182,10 +186,6 @@
       .row {
         align-items: flex-start;
       }
-    }
-
-    .about & {
-      background: $alabaster;
     }
 
     &__logo-image {

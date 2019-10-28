@@ -31,7 +31,17 @@
   }
 
   &__profile-picture-date {
+    position: relative;
     margin-bottom: 80px;
+
+    &:before {
+      @extend %background--left;
+      top: 70px;
+      left: 170px;
+      width: 299px;
+      height: 321px;
+      background-image: url("~src/assets/images/blocks-2.svg");
+    }
   }
       
   &__profile-picture {
@@ -40,6 +50,16 @@
 
   &__profile-text {
     margin-bottom: 90px;
+    position: relative;
+
+    &:before {
+      @extend %background--right;
+      top: 150px;
+      right: 220px;
+      width: 299px;
+      height: 411px;
+      background-image: url("~src/assets/images/circles.svg");
+    }
   }
 
   &__profile-text-wrapper,
@@ -75,9 +95,30 @@
 
   &__experience {
     margin-bottom: 60px;
+    position: relative;
+
+    &::before {
+      @extend %background--right;
+      top: 40px;
+      right: 220px;
+      width: 393px;
+      height: 477px;
+      background-image: url("~src/assets/images/blocks.svg");
+    }
   }
 
   &__life-purpose {
+    position: relative;
+
+    &:before {
+      @extend %background--left;
+      top: 70px;
+      left: 120px;
+      width: 250px;
+      height: 330px;
+      background-image: url("~src/assets/images/wormhole.svg");
+    }
+
     > div {
       margin-left: auto;
     }
@@ -88,12 +129,72 @@
       width: calc((100% - 40px) / 2);
       margin-bottom: 40px;
     }
+
+    &__title {
+      margin-bottom: 25px;
+
+      &::before {
+        top: 50px;
+        right: 60px;
+      }
+    }
+
+    &__the-title {
+      font-size: 24vw;
+      hyphens: auto;
+    }
+
+    &__date {
+      font-size: 18px;
+      margin-bottom: 65px;
+    }
+
+    &__profile-text-wrapper,
+    &__experience-wrapper,
+    &__life-purpose-wrapper {
+      > p {
+        font-size: 20px;
+      }
+    }
+    
+    &__profile-text {
+      margin-bottom: 75px;
+    }
+    
+    &__skills {
+      margin-bottom: 75px;
+    }
+    
+    &__skills-text {
+      font-size: 44px;
+    }
+    
+    &__photography {
+      padding: 40px 0;
+    }
+    
+    &__photography-subtitle {
+      font-size: 26px;
+      
+      > span {
+        display: block;
+      }
+    }
+
+    &__profile-picture-date,
+    &__profile-text,
+    &__experience,
+    &__life-purpose {
+      &::before {
+        display: none;
+      }
+    }
   }
   
   @include media-breakpoint-down(sm) {
     &__photography-list-item {
       width: 100%;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
   }
 }

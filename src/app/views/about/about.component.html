@@ -1,7 +1,7 @@
 <main class="about" *ngIf="content">
   <div class="about__title row">
     <div class="container">
-      <div class="about__title-wrapper col-9">
+      <div class="about__title-wrapper col-md-9">
         <h1 class="about__the-title text-with-square-dot" [innerHTML]="content['page_title'][0]['text']"></h1>
       </div>
     </div>
@@ -45,7 +45,7 @@
   
   <div class="about__photography">
     <div class="container">
-      <h2 class="about__skills-subtitle page-subtitle page-subtitle--red">Urban photography {{ '{' }} with iPhone {{ '}' }}</h2>
+      <h2 class="about__photography-subtitle page-subtitle page-subtitle--red">Urban photography <span>{{ '{' }} with iPhone {{ '}' }}</span></h2>
       <ngx-masonry [useImagesLoaded]="true" [options]="masonryOptions">
         <div
           *ngFor="let item of content['urban_photography']"
