@@ -1,6 +1,6 @@
 // tslint:disable: max-line-length
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { PreloaderService } from 'src/app/services/preloader.service';
 
 import { PrismicService } from '../../services/prismic.service';
 
@@ -16,8 +16,12 @@ export class HomeComponent implements OnInit {
    */
   content: object;
 
+  /**
+   * @internal 
+   */
   constructor(
     private prismicService: PrismicService,
+    private preloaderService: PreloaderService,
   ) { }
 
   /**
@@ -28,6 +32,9 @@ export class HomeComponent implements OnInit {
       .getPrismicContent('/', 'articles-list')
       .subscribe(res => {
         this.content = res['results'][0]['data'];
+        setTimeout(() => {
+          this.preloaderService.hidePreloader();
+        }, 1000);
       });
   }
 

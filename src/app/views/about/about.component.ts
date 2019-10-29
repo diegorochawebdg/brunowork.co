@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxMasonryOptions } from 'ngx-masonry';
+import { PreloaderService } from 'src/app/services/preloader.service';
 import { PrismicService } from 'src/app/services/prismic.service';
 
 @Component({
@@ -21,8 +22,12 @@ export class AboutComponent implements OnInit {
     gutter: 40,
   };
 
+  /**
+   * @internal
+   */
   constructor(
     private prismicService: PrismicService,
+    private preloaderService: PreloaderService,
   ) { }
 
   /**
@@ -33,6 +38,9 @@ export class AboutComponent implements OnInit {
       .getPrismicContent('/about', 'about_page')
       .subscribe(res => {
         this.content = res['results'][0]['data'];
+        setTimeout(() => {
+          this.preloaderService.hidePreloader();
+        }, 1000);
       });
   }
 
