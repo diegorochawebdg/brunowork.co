@@ -29,7 +29,7 @@
     &::before {
       @extend %background--left;
       top: 160px;
-      width: 393px;
+      width: 300px;
       height: 477px;
       background-image: url("~src/assets/images/blocks-2.svg");
       transform: translateX(-50%);
@@ -63,6 +63,48 @@
 
   &__article-list-item {
     margin-bottom: 230px;
+    position: relative;
+
+    &:nth-child(odd) {
+      &::before {
+        @extend %background--right;
+        width: 300px;
+        background-image: url("~src/assets/images/blocks-2.svg");
+        top: 0;
+        height: 324px;
+        transform: translate(65%, -50%);
+      }
+      
+      &::after {
+        @extend %background--left;
+        width: 448px;
+        background-image: url("~src/assets/images/circles.svg");
+        top: 50%;
+        height: 407px;
+        transform: translate(-105%, -50%);
+      }
+    }
+    
+    &:nth-child(even) {
+      &::before {
+        @extend %background--right;
+        top: 50%;
+        width: 393px;
+        height: 477px;
+        background-image: url("~src/assets/images/blocks.svg");
+        transform: translate(91%, -50%);
+      }
+      
+      &::after {
+        @extend %background--left;
+        width: 240px;
+        background-image: url("~src/assets/images/wormhole.svg");
+        bottom: 0;
+        height: 330px;
+        transform: translate(-115%, 50%);
+      }
+    }
+
   }
 
   @include media-breakpoint-down(md) {
@@ -86,6 +128,15 @@
 
     &__bio-text {
       font-size: 20px;
+    }
+
+    &__article-list-item {
+      &:nth-child(even)::before,
+      &:nth-child(even)::after,
+      &:nth-child(odd)::before,
+      &:nth-child(odd)::after {
+        display: none !important;
+      }
     }
   }
 }

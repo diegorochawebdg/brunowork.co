@@ -8,11 +8,11 @@
 %background--right {
   @extend %background;
   right: 0;
-  transform: translateX(90%);
+  transform: translateX(70%);
 }
 
 %background--left {
   @extend %background;
   left: 0;
-  transform: translateX(-90%);
+  transform: translateX(-70%);
 }
