@@ -41,4 +41,23 @@
       </ol>
     </div>
   </div>
+
+  <div class="home__dribble-shots">
+    <div class="container" *ngFor="let item of content['body']">
+      <ul class="home__dribble-shots-list row" *ngIf="item['slice_type'] == 'dribble_shots'">
+        <li class="home__dribble-shots-list-item col-md-6" *ngFor="let shot of item['items']">
+          <a [href]="shot['dribble_project_link']['url']" class="home__dribble-shots-wrapper" *ngIf="shot['dribble_image']['dimensions']">
+            <div class="home__dribble-shots-hover">
+              <span class="home__dribble-shots-hover-text read-more">view on dribble</span>
+            </div>
+            <img 
+              [src]="shot['dribble_image']['url']" 
+              [alt]="shot['dribble_image']['alt']"
+              [width]="shot['dribble_image']['dimensions']['width']"
+              [height]="shot['dribble_image']['dimensions']['height']">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </main>

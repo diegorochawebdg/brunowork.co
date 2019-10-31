@@ -104,7 +104,43 @@
         transform: translate(-115%, 50%);
       }
     }
+  }
 
+  &__dribble-shots-list {
+    display: flex;
+    flex-basis: 50%;
+  }
+  
+  &__dribble-shots-list-item {
+    margin-bottom: 30px;
+  }
+  
+  &__dribble-shots-wrapper {
+    position: relative;
+    display: block;
+  }
+
+  &__dribble-shots-hover {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100%;
+    transition: opacity 300ms ease;
+    opacity: 0;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__dribble-shots-hover-text {
+    color: $torch_red;
+    font-size: 22px;
   }
 
   @include media-breakpoint-down(md) {
