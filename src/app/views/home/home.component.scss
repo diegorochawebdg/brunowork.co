@@ -106,6 +106,16 @@
     }
   }
 
+  &__dribble-shots-title {
+    margin-bottom: 50px;
+    font-size: 40px;
+
+    > span {
+      color: $torch_red;
+      text-transform: uppercase;
+    }
+  }
+
   &__dribble-shots-list {
     display: flex;
     flex-basis: 50%;
@@ -172,6 +182,14 @@
       &:nth-child(odd)::before,
       &:nth-child(odd)::after {
         display: none !important;
+      }
+    }
+
+    &__dribble-shots-title {
+      font-size: 38px;
+      
+      > span {
+        display: block;
       }
     }
   }

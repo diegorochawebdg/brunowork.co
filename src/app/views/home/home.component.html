@@ -43,6 +43,9 @@
   </div>
 
   <div class="home__dribble-shots">
+    <div class="container">
+      <h2 class="home__dribble-shots-title"><span>Latest</span> Dribble Shots</h2>
+    </div>
     <div class="container" *ngFor="let item of content['body']">
       <ul class="home__dribble-shots-list row" *ngIf="item['slice_type'] == 'dribble_shots'">
         <li class="home__dribble-shots-list-item col-md-6" *ngFor="let shot of item['items']">
