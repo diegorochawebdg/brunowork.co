@@ -1,6 +1,5 @@
-{{ content.article_title | json }}
 <article class="article row">
-  <div class="article__text-column col-md-4">
+  <div class="article__text-column col-lg-4">
     <div class="article__hgroup">
       <h1 class="article__title"><span>{{ index + 1 }}.</span> {{ content.primary.article_title[0].text }}</h1>
       <h2 class="article__subtitle">{{ content.primary.article_subtitle[0].text }}</h2>
@@ -10,14 +9,25 @@
         <li class="article__slider-item" *ngFor="let slide of content.items">
           <div *ngIf="slide.slide_video.url" class="article__video-container">
             <video
+              *ngIf="!isIosDevice"
               width="290"
               height="576"
+              [poster]="slide.slide_image.url"
               autoplay
               loop
               muted
               playsinline>
               <source [src]="slide.slide_video.url">
             </video>
+            <picture *ngIf="isIosDevice">
+              <source 
+                [srcset]="slide.slide_video.url" 
+                type="video/mp4">
+              <img 
+                *ngIf="slide.slide_image?.url" 
+                [src]="slide.slide_image.url" 
+                [alt]="slide.slide_image.alt">
+            </picture>
           </div>
           <img
             *ngIf="slide.slide_image.url && !slide.slide_video.url"
@@ -51,7 +61,7 @@
       </div>
     </div>
   </div>
-  <div class="article__slider-column col-md-7 offset-md-1">
+  <div class="article__slider-column col-lg-7 offset-lg-1">
     <div class="article__slider-wrapper">
       <ul class="article__slider-list">
         <li class="article__slider-item" *ngFor="let slide of content.items">
@@ -59,6 +69,7 @@
             <video
               width="290"
               height="576"
+              [poster]="slide.slide_image.url"
               autoplay
               loop
               muted

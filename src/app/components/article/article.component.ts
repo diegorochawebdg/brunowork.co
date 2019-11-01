@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
 import { TinySliderInstance, tns } from 'node_modules/tiny-slider/src/tiny-slider';
 
 @Component({
@@ -6,11 +6,13 @@ import { TinySliderInstance, tns } from 'node_modules/tiny-slider/src/tiny-slide
   templateUrl: './article.component.html',
   styleUrls: [ './article.component.scss' ],
 })
-export class ArticleComponent implements AfterViewInit {
+export class ArticleComponent implements AfterViewInit, OnInit {
   /**
    * A instância do slider
    */
   slider: TinySliderInstance;
+
+  isIosDevice = false;
 
   /**
    * O array de conteúdos do artigo
@@ -58,6 +60,10 @@ export class ArticleComponent implements AfterViewInit {
     this.slider.refresh();
   }
 
+  ngOnInit() {
+    this.isIosDevice = /iPad|iPhone|iPod/.test(navigator.platform) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  }
+
   /**
    * @internal
    */
@@ -73,6 +79,9 @@ export class ArticleComponent implements AfterViewInit {
     }, 2000);
   }
 
+  /**
+   * @internal
+   */
   ngOnDestroy() {
     console.log(this.slider);
     this.destroySlider();
