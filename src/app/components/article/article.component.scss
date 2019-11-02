@@ -13,6 +13,7 @@
 
   &__title {
     margin-bottom: 22px;
+    font-size: 55px;
 
     > span {
       color: $torch_red;
@@ -96,8 +97,18 @@
     margin-left: auto;
   }
 
+  @include media-breakpoint-down(lg) {
+    &__title {
+      font-size: 40px;
+    }
+  }
+
   @include media-breakpoint-down(md) {
     display: block;
+
+    &__title {
+      font-size: 38px;
+    }
 
     &__subtitle {
       margin-bottom: 40px;
