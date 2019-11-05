@@ -62,7 +62,7 @@
   }
 
   &__slider-wrapper {
-    background-color: $mine_shaft;
+    background-color: rgba(46, 46, 46, .2);
     padding: 100px 20px;
     height: 100%;
     text-align: center;
@@ -134,5 +134,59 @@
         margin-bottom: 40px;
       }
     }
+  }
+}
+
+.tns {
+  &-controls {
+    margin: 50px auto 0;
+    background-color: $mine_shaft;
+    padding: 12px 14px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 160px;
+
+    &::before {
+      content: "Assets";
+      color: $white;
+      font-size: 14px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 500;
+    }
+
+    > button {
+      background-color: transparent;
+      border: none;
+      font-size: 0;
+
+      &::after {
+        content: "";
+        background-image: url("../../../assets/images/arrow.svg");
+        background-repeat: no-repeat;
+        background-position: right center;
+        width: 24px;
+        height: 16px;
+        display: block;
+        margin-left: 25px;
+        transition: transform 300ms ease;
+      }
+    
+      &:hover {
+        &::after {
+          transform: translateX(5px);
+        }
+      }
+
+      &[data-controls="prev"] {
+        transform: rotate(-180deg);
+      }
+    }
+    
   }
 }

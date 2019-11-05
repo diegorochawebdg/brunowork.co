@@ -1,10 +1,11 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { TinySliderInstance, tns } from 'node_modules/tiny-slider/src/tiny-slider';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: [ './article.component.scss' ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ArticleComponent implements AfterViewInit, OnInit {
   /**
@@ -12,6 +13,9 @@ export class ArticleComponent implements AfterViewInit, OnInit {
    */
   slider: TinySliderInstance;
 
+  /**
+   * Define se o dispositivo é iOS ou não
+   */
   isIosDevice = false;
 
   /**
@@ -40,7 +44,6 @@ export class ArticleComponent implements AfterViewInit, OnInit {
     const sliderConfig: object = {
       container: element,
       center: true,
-      loop: false,
       items: 1,
       controls: true,
       controlsPosition: 'bottom',
