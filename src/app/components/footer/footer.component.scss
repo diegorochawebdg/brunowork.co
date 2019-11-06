@@ -4,6 +4,16 @@
 
 .footer {
   margin-top: 140px;
+  position: relative;
+
+  &::after {
+    @extend %background--right;
+    width: 448px;
+    height: 407px;
+    background-image: url("~src/assets/images/circles.svg");
+    top: 0;
+    transform: translate(50%, -40%);
+  }
 
   &__text-wrapper {
     margin-bottom: 100px;
@@ -26,7 +36,7 @@
 
     &::before {
       @extend %background;
-      right: 50px;
+      right: -20px;
       top: -80px;
       width: 245px;
       height: 255px;
