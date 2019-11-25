@@ -21,19 +21,20 @@
   }
 
   &__subtitle {
-    font-size: 24px;
+    font-size: 33px;
+    line-height: 1.4em;
     margin-bottom: 25px;
     font-weight: normal;
   }
 
   &__text,
   &__blockquote {
-    font-size: 20px;
     line-height: 40px;
     margin-bottom: 35px;
   }
 
   &__blockquote {
+    font-size: 26px;
     margin: 0 0 45px;
     padding-left: 25px;
     position: relative;
@@ -51,12 +52,12 @@
 
   &__box-subtitle {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 26px;
     margin-bottom: 17px;
   }
 
   &__role-team-item {
-    font-size: 18px;
+    font-size: 24px;
     color: $dusty_gray;
     line-height: 30px;
   }
@@ -97,13 +98,13 @@
     margin-left: auto;
   }
 
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(md) {
     &__title {
       font-size: 40px;
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     display: block;
 
     &__title {

@@ -39,11 +39,11 @@
     position: relative;
 
     &:not( :first-child ) {
-      margin-left: 26px;
+      margin-left: 32px;
     }
 
     &:not( :last-child ) {
-      margin-right: 26px;
+      margin-right: 32px;
     }
 
   }

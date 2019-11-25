@@ -16,7 +16,7 @@
   }
 
   &__title {
-    font-size: 144px;
+    font-size: 10.5vw;
     margin-bottom: 70px;
     position: relative;
     z-index: 1;
@@ -42,7 +42,7 @@
   }
 
   &__social-link {
-    font-size: 22px;
+    font-size: 30px;
     color: $wild_sand;
 
     &:hover {
@@ -51,6 +51,9 @@
   }
 
   &__bio-text {
+    font-size: 33px;
+    line-height: 1.4em;
+
     &:last-of-type {
       margin-bottom: 44px;
     }
@@ -128,6 +131,10 @@
   &__dribble-shots-wrapper {
     position: relative;
     display: block;
+
+    > img {
+      width: 100%;
+    }
   }
 
   &__dribble-shots-hover {
@@ -155,7 +162,7 @@
 
   @include media-breakpoint-down(md) {
     &__title {
-      font-size: 20vw;
+      font-size: 10vw;
     }
 
     &__social-wrapper {
