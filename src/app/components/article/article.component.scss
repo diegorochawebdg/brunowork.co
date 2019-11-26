@@ -98,9 +98,26 @@
     margin-left: auto;
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     &__title {
       font-size: 40px;
+    }
+
+    &__subtitle {
+      font-size: 24px;
+    }
+
+    &__text,
+    &__blockquote {
+      font-size: 20px;
+    }
+
+    &__box-subtitle {
+      font-size: 20px;
+    }
+
+    &__role-team-item {
+      font-size: 18px;
     }
   }
 
@@ -129,6 +146,8 @@
     }
 
     &__slider-wrapper {
+      padding: 35px 25px;
+
       &--mobile {
         display: flex;
         height: auto;
@@ -177,7 +196,7 @@
         margin-left: 25px;
         transition: transform 300ms ease;
       }
-    
+
       &:hover {
         &::after {
           transform: translateX(5px);
@@ -188,6 +207,6 @@
         transform: rotate(-180deg);
       }
     }
-    
+
   }
 }

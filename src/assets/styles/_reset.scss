@@ -50,3 +50,9 @@ a {
 p {
   line-height: 34px;
 }
+
+@include media-breakpoint-down(lg) {
+  body {
+    font-size: 24px;
+  }
+}
