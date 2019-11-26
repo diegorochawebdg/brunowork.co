@@ -14,6 +14,7 @@
   &__title {
     margin-bottom: 22px;
     font-size: 55px;
+    max-width: 90%;
 
     > span {
       color: $torch_red;
@@ -60,6 +61,10 @@
     font-size: 24px;
     color: $dusty_gray;
     line-height: 30px;
+  }
+
+  &__slider-column {
+    padding-left: 76px;
   }
 
   &__slider-wrapper {

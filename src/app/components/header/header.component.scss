@@ -15,7 +15,7 @@
   .about & {
     background: $alabaster;
   }
-  
+
   .row {
     display: flex;
     align-items: center;
@@ -45,12 +45,11 @@
     &:not( :last-child ) {
       margin-right: 32px;
     }
-
   }
-  
+
   &__link {
     color: $white;
-    
+
     &::after {
       content: "";
       position: absolute;
@@ -61,7 +60,7 @@
       width: 0;
       transition: width 300ms ease;
     }
-  
+
     &.active,
     &:hover {
       &::after {
@@ -90,8 +89,8 @@
     margin: 0;
     z-index: 2;
 
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: "";
       position: absolute;
       left: 50%;
@@ -108,11 +107,11 @@
       }
     }
 
-    &:before {
+    &::before {
       transform: translate(-50%, -5px);
     }
 
-    &:after {
+    &::after {
       transform: translate(-50%, 5px);
     }
   }
@@ -155,15 +154,21 @@
     font-size: 30px;
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
+    &__link {
+      font-size: 20px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
     margin-bottom: 0;
     position: fixed;
     padding: 32px 0;
     height: 111px;
     overflow: hidden;
-    
+
     &.sticky {
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.51);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, .51);
       padding: 15px 0;
       height: 77px;
     }
@@ -176,7 +181,7 @@
         opacity: .66;
         transition: visibility 0ms linear 0ms, opacity 300ms ease 200ms;
       }
-      
+
       .row,
       .container {
         height: 100%;
@@ -193,19 +198,19 @@
           transform: translateX(0);
           $delay: 350;
 
-          &:nth-child(1) {
+          &:nth-child( 1 ) {
             transition-delay: #{$delay}ms;
           }
-          
-          &:nth-child(2) {
+
+          &:nth-child( 2 ) {
             transition-delay: #{$delay + (50 * 1)}ms;
           }
-          
-          &:nth-child(3) {
+
+          &:nth-child( 3 ) {
             transition-delay: #{$delay + (50 * 2)}ms;
           }
-          
-          &:nth-child(4) {
+
+          &:nth-child( 4 ) {
             transition-delay: #{$delay + (50 * 3)}ms;
           }
         }
@@ -228,15 +233,16 @@
     &__mobile-menu-opener-wrapper {
       display: flex;
     }
-    
+
     &__mobile-menu-opener {
       .mobile-menu-opened & {
         background-color: rgba(13, 13, 13, .3);
-        &:before {
+
+        &::before {
           transform: translateX(-50%) rotate(-45deg);
         }
-        
-        &:after {
+
+        &::after {
           transform: translateX(-50%) rotate(45deg);
         }
       }

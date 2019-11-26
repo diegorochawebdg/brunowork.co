@@ -7,9 +7,8 @@ $gilroy: "gilroy", sans-serif;
  * Bootstrap grid values
  **/
 $container-max-widths: (
-  // sm: 540px,
   sm: 720px,
-  md: 1024px,
+  md: 992px,
   lg: 1300px,
   xl: 1600px
 ) !default;
@@ -17,12 +16,12 @@ $container-max-widths: (
 $grid-breakpoints: (
   xs: 0,
   sm: 636px,
-  md: 1084px,
+  md: 1024px,
   lg: 1360px,
   xl: 1660px,
 ) !default;
 
-$grid-gutter-width: 30px !default;
+$grid-gutter-width: 48px !default;
 
 /**
  * Colors

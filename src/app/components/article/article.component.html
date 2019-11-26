@@ -20,12 +20,12 @@
               <source [src]="slide.slide_video.url">
             </video>
             <picture *ngIf="isIosDevice">
-              <source 
-                [srcset]="slide.slide_video.url" 
+              <source
+                [srcset]="slide.slide_video.url"
                 type="video/mp4">
-              <img 
-                *ngIf="slide.slide_image?.url" 
-                [src]="slide.slide_image.url" 
+              <img
+                *ngIf="slide.slide_image?.url"
+                [src]="slide.slide_image.url"
                 [alt]="slide.slide_image.alt">
             </picture>
           </div>
@@ -56,7 +56,7 @@
       </div>
     </div>
   </div>
-  <div class="article__slider-column col-lg-7 offset-lg-1">
+  <div class="article__slider-column col-lg-8">
     <div class="article__slider-wrapper">
       <ul class="article__slider-list">
         <li class="article__slider-item" *ngFor="let slide of content.items">
