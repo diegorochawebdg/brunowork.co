@@ -171,10 +171,17 @@
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
+    &__title {
+      font-size: 9.8vw;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
     &__title {
       font-size: 10vw;
       line-height: 1em;
+      font-size: 20vw;
     }
 
     &__social-wrapper {
@@ -212,11 +219,4 @@
       }
     }
   }
-
-  @include media-breakpoint-down(sm) {
-    &__title {
-      font-size: 20vw;
-    }
-  }
-
 }
