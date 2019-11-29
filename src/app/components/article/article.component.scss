@@ -83,19 +83,16 @@
 
   &__slider-image {
     margin: 0 auto;
+    max-width: 455px;
   }
 
   &__slider-item {
     video {
-      width: 100%;
-      max-width: 290px;
       height: auto;
     }
   }
 
   &__video-container {
-    width: 290px;
-    height: 576px;
     margin: 0 auto;
   }
 
@@ -123,6 +120,12 @@
 
     &__role-team-item {
       font-size: 18px;
+    }
+
+    &__slider-image,
+    &__video-container,
+    &__slider-item video {
+      max-width: 332px;
     }
   }
 
@@ -158,6 +161,12 @@
         height: auto;
         margin-bottom: 40px;
       }
+    }
+
+    &__slider-image,
+    &__video-container,
+    &__slider-item video {
+      max-width: 100%;
     }
   }
 }

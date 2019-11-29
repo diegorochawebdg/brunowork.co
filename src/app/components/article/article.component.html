@@ -60,11 +60,12 @@
     <div class="article__slider-wrapper">
       <ul class="article__slider-list">
         <li class="article__slider-item" *ngFor="let slide of content.items">
-          <div *ngIf="slide.slide_video.url" class="article__video-container">
+          <div *ngIf="slide.slide_video.url" [ngStyle]="{'width': slide.slide_video_width / 2, 'height': slide.slide_video_height / 2}" class="article__video-container">
             <video
-              width="290"
-              height="576"
+              [width]="slide.slide_video_width / 2"
+              [height]="slide.slide_video_height / 2"
               [poster]="slide.slide_image.url"
+              preload="true"
               autoplay
               loop
               muted

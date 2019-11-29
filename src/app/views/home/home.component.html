@@ -35,9 +35,11 @@
   <div class="home__projects-wrapper">
     <div class="container">
       <ol class="home__articles-list">
-        <li class="home__article-list-item" *ngFor="let article of content['body']; let i = index;">
-          <app-article *ngIf="article['slice_type'] == 'articles-list'" [content]="article" [index]="i"></app-article>
-        </li>
+        <ng-container *ngFor="let article of content['body']; let i = index;">
+          <li class="home__article-list-item" *ngIf="article['slice_type'] == 'articles-list'">
+            <app-article [content]="article" [index]="i"></app-article>
+          </li>
+        </ng-container>
       </ol>
     </div>
   </div>
@@ -45,22 +47,22 @@
   <div class="home__dribble-shots">
     <div class="container">
       <h2 class="home__dribble-shots-title"><span>Latest</span> Dribble Shots</h2>
-    </div>
-    <div class="container" *ngFor="let item of content['body']">
-      <ul class="home__dribble-shots-list row" *ngIf="item['slice_type'] == 'dribble_shots'">
-        <li class="home__dribble-shots-list-item col-md-6" *ngFor="let shot of item['items']">
-          <a [href]="shot['dribble_project_link']['url']" class="home__dribble-shots-wrapper" *ngIf="shot['dribble_image']['dimensions']">
-            <div class="home__dribble-shots-hover">
-              <span class="home__dribble-shots-hover-text read-more">view on dribble</span>
-            </div>
-            <img 
-              [src]="shot['dribble_image']['url']" 
-              [alt]="shot['dribble_image']['alt']"
-              [width]="shot['dribble_image']['dimensions']['width']"
-              [height]="shot['dribble_image']['dimensions']['height']">
-          </a>
-        </li>
-      </ul>
+      <ng-container class="container" *ngFor="let item of content['body']">
+        <ul class="home__dribble-shots-list" *ngIf="item['slice_type'] == 'dribble_shots'">
+          <li class="home__dribble-shots-list-item" *ngFor="let shot of item['items']">
+            <a [href]="shot['dribble_project_link']['url']" class="home__dribble-shots-wrapper" *ngIf="shot['dribble_image']['dimensions']">
+              <div class="home__dribble-shots-hover">
+                <span class="home__dribble-shots-hover-text read-more">view on dribble</span>
+              </div>
+              <img 
+                [src]="shot['dribble_image']['url']" 
+                [alt]="shot['dribble_image']['alt']"
+                [width]="shot['dribble_image']['dimensions']['width']"
+                [height]="shot['dribble_image']['dimensions']['height']">
+            </a>
+          </li>
+        </ul>
+      </ng-container>
     </div>
   </div>
 </main>

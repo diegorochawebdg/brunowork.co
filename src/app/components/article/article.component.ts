@@ -59,8 +59,8 @@ export class ArticleComponent implements AfterViewInit, OnInit {
     this.slider.destroy();
   }
   
-  refreshSlider() {
-    this.slider.refresh();
+  updateSliderHeight() {
+    this.slider.updateSliderHeight();
   }
 
   ngOnInit() {
@@ -78,7 +78,7 @@ export class ArticleComponent implements AfterViewInit, OnInit {
       });
 
     setTimeout(() => {
-      this.refreshSlider();
+      this.updateSliderHeight();
     }, 2000);
   }
 
@@ -86,7 +86,6 @@ export class ArticleComponent implements AfterViewInit, OnInit {
    * @internal
    */
   ngOnDestroy() {
-    console.log(this.slider);
     this.destroySlider();
   }
 }
