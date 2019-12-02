@@ -66,7 +66,11 @@
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
+    &::after {
+      display: none;
+    }
+
     &__text-wrapper {
       position: relative;
 
@@ -85,7 +89,7 @@
     }
 
     &__text {
-      font-size: 19vw;
+      font-size: 13.8vw;
       line-height: 1.2em;
 
       > a {
@@ -102,12 +106,6 @@
     }
 
     &__social-wrapper {
-      display: none;
-    }
-  }
-
-  @include media-breakpoint-down(md) {
-    &::after {
       display: none;
     }
   }
