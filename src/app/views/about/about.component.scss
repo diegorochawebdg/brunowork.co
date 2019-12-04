@@ -151,9 +151,9 @@
     }
 
     &__the-title {
-      font-size: 24vw;
+      font-size: 23vw;
       hyphens: auto;
-      max-width: 65vw;
+      max-width: 86vw;
     }
 
     &__date {
@@ -221,12 +221,6 @@
     &__photography-list-item {
       width: 100%;
       margin-bottom: 30px;
-    }
-  }
-
-  @include media-breakpoint-down(xs) {
-    &__the-title {
-      max-width: 80vw;
     }
   }
 }
