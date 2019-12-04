@@ -146,9 +146,14 @@
       }
     }
 
+    &__title-wrapper {
+      max-width: 100%;
+    }
+
     &__the-title {
       font-size: 24vw;
       hyphens: auto;
+      max-width: 65vw;
     }
 
     &__date {
@@ -212,12 +217,16 @@
         display: none;
       }
     }
-  }
-  
-  @include media-breakpoint-down(sm) {
+
     &__photography-list-item {
       width: 100%;
       margin-bottom: 30px;
+    }
+  }
+
+  @include media-breakpoint-down(xs) {
+    &__the-title {
+      max-width: 80vw;
     }
   }
 }

@@ -13,7 +13,7 @@
         <div class="about__date-wrapper col">
           <span class="about__date">Updated - {{ content['post_date'] | date: 'LLL. yyyy' }}</span>
         </div>
-        <div class="about__profile-picture-wrapper col-sm-8">
+        <div class="about__profile-picture-wrapper col-md-8">
           <img 
             [ngClass]="'about__profile-picture'"
             [src]="content['profile_image']['url']" 
