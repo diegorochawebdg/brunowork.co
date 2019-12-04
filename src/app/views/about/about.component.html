@@ -1,7 +1,7 @@
 <main class="about" *ngIf="content">
-  <div class="about__title row">
+  <div class="about__title">
     <div class="container">
-      <div class="about__title-wrapper col-md-9">
+      <div class="about__title-wrapper">
         <h1 class="about__the-title text-with-square-dot" [innerHTML]="content['page_title'][0]['text']"></h1>
       </div>
     </div>
@@ -13,7 +13,7 @@
         <div class="about__date-wrapper col">
           <span class="about__date">Updated - {{ content['post_date'] | date: 'LLL. yyyy' }}</span>
         </div>
-        <div class="about__profile-picture-wrapper col-md-8">
+        <div class="about__profile-picture-wrapper col-sm-8">
           <img 
             [ngClass]="'about__profile-picture'"
             [src]="content['profile_image']['url']" 
@@ -26,7 +26,7 @@
   <div class="about__profile-text">
     <div class="container">
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-sm-7">
           <h2 class="about__profile-subtitle page-subtitle">Bruno Alves Fernandes</h2>
           <div class="about__profile-text-wrapper">
             <p *ngFor="let text of content['profile_text']" [innerHTML]="text['text']"></p>
@@ -60,7 +60,7 @@
   <div class="about__experience">
     <div class="container">
       <div class="row">
-        <div class="col-md-7">
+        <div class="col-sm-7">
           <h2 class="about__experience-subtitle page-subtitle">Background and Experience</h2>
           <div class="about__experience-wrapper">
             <p class="about__experience-text" *ngFor="let text of content['experience_text']" [innerHTML]="text['text']"></p>
@@ -73,7 +73,7 @@
   <div class="about__life-purpose">
     <div class="container">
       <div class="row">
-        <div class="col-md-7 ml-auto">
+        <div class="col-sm-7 ml-auto">
           <h2 class="about__life-purpose-subtitle page-subtitle">Life Purpose</h2>
           <div class="about__life-purpose-wrapper">
             <p class="about__life-purpose-text" *ngFor="let text of content['purpose_text']" [innerHTML]="text['text']"></p>

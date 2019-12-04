@@ -181,12 +181,6 @@
     }
   }
 
-  @include media-breakpoint-down(lg) {
-    &__title {
-      font-size: 9.8vw;
-    }
-  }
-
   @include media-breakpoint-down(sm) {
     &__title {
       line-height: 1em;

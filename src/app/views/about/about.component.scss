@@ -3,6 +3,10 @@
 @import "~bootstrap/scss/bootstrap-grid.scss";
 
 .about {
+  &__title-wrapper {
+    max-width: 70%;
+  }
+
   &__title {
     position: relative;
     margin-bottom: 80px;
@@ -20,6 +24,7 @@
   &__the-title {
     font-size: 9.8vw;
     line-height: 1em;
+    position: relative;
   }
 
   &__date {
@@ -66,6 +71,8 @@
   &__experience-wrapper,
   &__life-purpose-wrapper {
     > p {
+      font-weight: 300;
+      
       &:not( :last-child ) {
         margin-bottom: 25px;
       }
@@ -124,7 +131,7 @@
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     &__photography-list-item {
       width: calc((100% - 40px) / 2);
       margin-bottom: 40px;
@@ -157,6 +164,22 @@
       }
     }
     
+    &__profile-picture-wrapper {
+      position: relative;
+      overflow: hidden;
+      padding: 0 0 120vw;
+
+      > img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 100%;
+        width: auto;
+        max-width: initial;
+        transform: translateX(-50%);
+      }
+    }
+
     &__profile-text {
       margin-bottom: 75px;
     }

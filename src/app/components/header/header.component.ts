@@ -78,7 +78,7 @@ export class HeaderComponent {
       url: '',
     },
     {
-      label: 'Dribble',
+      label: 'Dribbble',
       title: 'see my Dribble profile',
       url: '',
     }
