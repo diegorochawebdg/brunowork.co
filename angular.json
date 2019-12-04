@@ -25,7 +25,8 @@
             "aot": true,
             "assets": [
               "src/favicon",
-              "src/assets"
+              "src/assets",
+              "src/.htaccess"
             ],
             "styles": [
               "src/styles.scss"
