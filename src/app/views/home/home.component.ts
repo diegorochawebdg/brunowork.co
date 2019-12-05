@@ -1,5 +1,5 @@
 // tslint:disable: max-line-length
-import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { TinySliderInstance, tns } from 'node_modules/tiny-slider/src/tiny-slider';
 import { PreloaderService } from 'src/app/services/preloader.service';
 
@@ -9,6 +9,7 @@ import { PrismicService } from '../../services/prismic.service';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: [ './home.component.scss' ],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
