@@ -31,12 +31,8 @@ body {
   }
 
   @include media-breakpoint-down(lg) {
-    font-size: 28px;
-    margin-bottom: 28px;
-  }
-
-  @include media-breakpoint-down(sm) {
     font-size: 24px;
+    margin-bottom: 28px;
   }
 }
 
