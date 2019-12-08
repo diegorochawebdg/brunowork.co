@@ -75,12 +75,12 @@ export class HeaderComponent {
     {
       label: 'LinkedIn',
       title: 'see my LinkedIn profile',
-      url: '',
+      url: 'https://www.linkedin.com/in/bruno-alves-fernandes',
     },
     {
       label: 'Dribbble',
       title: 'see my Dribble profile',
-      url: '',
+      url: 'https://dribbble.com/brunoaffx',
     }
   ];
 

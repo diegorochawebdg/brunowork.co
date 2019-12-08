@@ -94,6 +94,14 @@
     margin-bottom: 80px;
     padding: 90px 0;
   }
+  
+  &__photography-subtitle {
+    > span {
+      display: block;
+      font-weight: normal;
+      font-size: .8em;
+    }
+  }
 
   &__photography-list-item {
     width: calc((100% - 80px) / 3);
@@ -156,9 +164,19 @@
       max-width: 86vw;
     }
 
+    &__date-wrapper {
+      padding: 0;
+    }
+
     &__date {
       font-size: 18px;
       margin-bottom: 65px;
+    }
+
+    &__profile-picture-date {
+      .row {
+        margin: 0;
+      }
     }
 
     &__profile-text-wrapper,

@@ -30,6 +30,12 @@
     }
   }
 
+  &__copyright-wrapper {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 5px;
+  }
+
   &__copyright-social-wrapper {
     margin-bottom: 48px;
     position: relative;
@@ -127,6 +133,10 @@
         display: none;
       }
     }
+
+    &__copyright-wrapper {
+      display: block;
+    }
     
     &__copyright-wrapper {
       padding: 0;
@@ -138,7 +148,7 @@
 
     &__bottom-info-wrapper {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
     }
 
     &__subtitle,

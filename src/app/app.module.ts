@@ -6,8 +6,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
-import { PrismicService } from './services/prismic.service';
 import { PreloaderComponent } from './components/preloader/preloader.component';
+import { PrismicService } from './services/prismic.service';
+import { SharedModule } from './shared/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PreloaderComponent } from './components/preloader/preloader.component';
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
+    SharedModule,
   ],
   providers: [
     PrismicService,

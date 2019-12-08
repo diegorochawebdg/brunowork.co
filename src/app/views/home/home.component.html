@@ -46,7 +46,7 @@
                 <div class="article__slider-wrapper article__slider-wrapper--mobile">
                   <ul class="article__slider-list">
                     <li class="article__slider-item" *ngFor="let slide of article.items">
-                      <div *ngIf="slide.slide_video.url" [ngStyle]="{width: slide.slide_video_width / 2, height: slide.slide_video_height / 2}" class="article__video-container">
+                      <div *ngIf="slide.slide_video.url" [ngStyle]="{'width.px': slide.slide_video_width / 2, 'height.px': slide.slide_video_height / 2}" class="article__video-container">
                         <video
                           *ngIf="!isIosDevice"
                           [width]="slide.slide_video_width / 2"
@@ -79,7 +79,7 @@
                   </ul>
                 </div>
                 <p class="article__text">{{ article.primary.article_text[0].text }}</p>
-                <blockquote class="article__blockquote">{{ article.primary.article_blockquote[0].text }}</blockquote>
+                <blockquote class="article__blockquote"><span>Business impact:</span> {{ article.primary.article_blockquote[0].text }}</blockquote>
                 <div class="article__role-team-wrapper row">
                   <div class="article__role-wrapper col-md-6" *ngIf="article.primary.article_role">
                     <h3 class="article__box-subtitle">My Role</h3>
@@ -99,7 +99,7 @@
                 <div class="article__slider-wrapper">
                   <ul class="article__slider-list">
                     <li class="article__slider-item" *ngFor="let slide of article.items">
-                      <div *ngIf="slide.slide_video.url" [ngStyle]="{width: slide.slide_video_width / 2, height: slide.slide_video_height / 2}" class="article__video-container">
+                      <div *ngIf="slide.slide_video.url" [ngStyle]="{'width.px': slide.slide_video_width / 2 | safe: 'style', 'height.px': slide.slide_video_height / 2 | safe: 'style'}" class="article__video-container">
                         <video
                           [width]="slide.slide_video_width / 2"
                           [height]="slide.slide_video_height / 2"

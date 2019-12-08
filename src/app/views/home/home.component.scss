@@ -288,12 +288,17 @@
     padding-left: 25px;
     position: relative;
 
+    > span {
+      font-weight: bold;
+    }
+
     &::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 0;
-      height: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 85%;
       width: 4px;
       background-color: $torch_red;
     }
@@ -323,6 +328,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 
     &--mobile {
       display: none;
