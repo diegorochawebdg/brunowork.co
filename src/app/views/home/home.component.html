@@ -46,7 +46,7 @@
                 <div class="article__slider-wrapper article__slider-wrapper--mobile">
                   <ul class="article__slider-list">
                     <li class="article__slider-item" *ngFor="let slide of article.items">
-                      <div *ngIf="slide.slide_video.url" [ngStyle]="{'width.px': slide.slide_video_width / 2, 'height.px': slide.slide_video_height / 2}" class="article__video-container">
+                      <div *ngIf="slide.slide_video.url" class="article__video-container">
                         <video
                           *ngIf="!isIosDevice"
                           [width]="slide.slide_video_width / 2"
@@ -99,7 +99,7 @@
                 <div class="article__slider-wrapper">
                   <ul class="article__slider-list">
                     <li class="article__slider-item" *ngFor="let slide of article.items">
-                      <div *ngIf="slide.slide_video.url" [ngStyle]="{'width.px': slide.slide_video_width / 2 | safe: 'style', 'height.px': slide.slide_video_height / 2 | safe: 'style'}" class="article__video-container">
+                      <div *ngIf="slide.slide_video.url" class="article__video-container">
                         <video
                           [width]="slide.slide_video_width / 2"
                           [height]="slide.slide_video_height / 2"
