@@ -116,7 +116,7 @@
     }
   }
 
-  &__dribble-shots-title {
+  &__dribbble-shots-title {
     margin-bottom: 50px;
     font-size: 40px;
 
@@ -126,19 +126,19 @@
     }
   }
 
-  &__dribble-shots-list {
+  &__dribbble-shots-list {
     display: flex;
     margin: 0 -8.5px;
     flex-wrap: wrap;
   }
   
-  &__dribble-shots-list-item {
+  &__dribbble-shots-list-item {
     margin-bottom: 17px;
     padding: 0 8.5px;
     flex-basis: 50%;
   }
 
-  &__dribble-shots-wrapper {
+  &__dribbble-shots-wrapper {
     position: relative;
     display: block;
 
@@ -147,7 +147,7 @@
     }
   }
 
-  &__dribble-shots-hover {
+  &__dribbble-shots-hover {
     position: absolute;
     display: flex;
     align-items: center;
@@ -165,7 +165,7 @@
     }
   }
 
-  &__dribble-shots-hover-text {
+  &__dribbble-shots-hover-text {
     color: $torch_red;
     font-size: 22px;
   }
@@ -229,7 +229,7 @@
       }
     }
 
-    &__dribble-shots-title {
+    &__dribbble-shots-title {
       font-size: 38px;
 
       > span {
@@ -237,11 +237,11 @@
       }
     }
 
-    &__dribble-shots-list {
+    &__dribbble-shots-list {
       margin: 0 -24px;
     }
 
-    &__dribble-shots-list-item {
+    &__dribbble-shots-list-item {
       flex-basis: 100%;
       margin: 0;
       padding: 0;

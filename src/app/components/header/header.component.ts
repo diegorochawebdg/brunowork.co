@@ -79,7 +79,7 @@ export class HeaderComponent {
     },
     {
       label: 'Dribbble',
-      title: 'see my Dribble profile',
+      title: 'see my Dribbble profile',
       url: 'https://dribbble.com/brunoaffx',
     }
   ];
