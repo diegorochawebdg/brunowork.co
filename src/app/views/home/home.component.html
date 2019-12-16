@@ -135,17 +135,17 @@
     <div class="container">
       <h2 class="home__dribbble-shots-title"><span>Latest</span> dribbble Shots</h2>
       <ng-container class="container" *ngFor="let item of content['body']">
-        <ul class="home__dribbble-shots-list" *ngIf="item['slice_type'] == 'dribbble_shots'">
+        <ul class="home__dribbble-shots-list" *ngIf="item['slice_type'] == 'dribble_shots'">
           <li class="home__dribbble-shots-list-item" *ngFor="let shot of item['items']">
-            <a [href]="shot['dribbble_project_link']['url']" class="home__dribbble-shots-wrapper" *ngIf="shot['dribbble_image']['dimensions']">
+            <a [href]="shot['dribble_project_link']['url']" class="home__dribbble-shots-wrapper" target="_blank" *ngIf="shot['dribble_image']['dimensions']">
               <div class="home__dribbble-shots-hover">
                 <span class="home__dribbble-shots-hover-text read-more">view on dribbble</span>
               </div>
               <img 
-                [src]="shot['dribbble_image']['url']" 
-                [alt]="shot['dribbble_image']['alt']"
-                [width]="shot['dribbble_image']['dimensions']['width']"
-                [height]="shot['dribbble_image']['dimensions']['height']">
+                [src]="shot['dribble_image']['url']" 
+                [alt]="shot['dribble_image']['alt']"
+                [width]="shot['dribble_image']['dimensions']['width']"
+                [height]="shot['dribble_image']['dimensions']['height']">
             </a>
           </li>
         </ul>
